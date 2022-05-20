@@ -1,183 +1,162 @@
-import * as React from "react"
+import React, { useRef, useState } from "react"
+import Layout from "../components/layout"
+import { TitleWrapper, Subtitle } from "../components/text";
+import styled from "styled-components";
+import SlideMenu from "../components/menu2"
+import { Button } from "../components/button"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import { Linkedin } from '@styled-icons/boxicons-logos'
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+import ContactForm from "../components/contact";
+import { Avatar } from "../components/avatar";
+import { Card, CardDivider } from "../components/card";
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+import { Carousel } from "../components/carousel/slider"
+import { Techno } from "../components/list";
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
+import HighLightWrapper from "../components/highlight";
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
+import Footer from "../components/footer";
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
+import Kiosk from '../images/welcome.png'
+import Droits from "../images/Droits communs.png"
 
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+const LinkedinIcon = styled(Linkedin)`
+width : 45px;
+height : 45px;
+color:white;
+margin: 20px`
 
-// markup
-const IndexPage = () => {
+const DivContact = styled.div`
+display:flex;
+flex-direction:column`
+
+
+const DivAbout = styled.div`
+display: flex;
+width:100vw;
+  justify-content : space-around;
+  align-items:center;
+
+
+`
+
+
+
+
+const IndexPage = (props) => {
+
+
+
+  const ref1 = useRef();
+
+  const handleClick1 = () => {
+    ref1.current.scrollIntoView({ behavior: "smooth" });
+
+  };
+
+  const ref2 = useRef();
+  const handleClick2 = () => {
+    ref2.current.scrollIntoView();
+  };
+
+  const ref3 = useRef();
+  const handleClick3 = () => {
+    ref3.current.scrollIntoView();
+  };
+
+  const ref4 = useRef();
+  const handleClick4 = () => {
+    ref4.current.scrollIntoView();
+  };
+
+
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+    <React.Fragment>
+
+      <Layout id="layout1" layout={{
+        width: "100vw", height: "100vh"
+      }}>
+
+        <SlideMenu handleClick1={() => handleClick1()}
+          handleClick2={() => handleClick2()}
+          handleClick3={() => handleClick3()}
+          handleClick4={() => handleClick4()}></SlideMenu>
+
+
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent:"center", height:"90%"}}>
+          <TitleWrapper title="Camille" size="xl" line="title"></TitleWrapper>
+          <TitleWrapper title="Benhammadi" size="xl" ></TitleWrapper>
+          <Subtitle><HighLightWrapper>Developer</HighLightWrapper></Subtitle>
+          <Button taille="normal" onClick={() => handleClick1()}>More</Button>
+        </div>
+        <a href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a>
+
+      </Layout>
+
+      <Layout id="layout2" layout={{ width: "100vw", height: "100vh" }}>
+        <div ref={ref1}></div>
+        <TitleWrapper margin="title" title="Who ?" size="l"></TitleWrapper>
+        <DivAbout>
+
+          <div style={{ width: "50%", display: "flex", justifyContent: "center" }}><Avatar></Avatar></div>
+          <div style={{ width: "50%", display: "flex", flexDirection: "column", alignContent: "center" }}><TitleWrapper font="zilla" size="s">From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TitleWrapper>
+            <TitleWrapper line="true" margin="desc" align="justify" font="zilla" size="xs">Hello !
+              I’m <HighLightWrapper>Camille</HighLightWrapper> and I used to draft legal documents, now I draft websites.
+
+              I’ve always had an interest in tech. I created my first website with Adobe dreamweaver in highschool. And I also worked on tech-related issues while studying law.
+
+              I decided to learn to code in 2021 so I did a bootcamp  and worked as a teacher’s assistant for 6 months. Now here I am !
+
+              I like to create things and solve problems. I’m passionate about what I do.
+              Interest in product design, making accessible and simple websites, learning and trying different projects...</TitleWrapper></div></DivAbout>
+
+
+      </Layout>
+      <Layout id="layout3" layout={{ width: "100vw", height: "100vh" }}>
+        <div ref={ref2}></div>
+        <TitleWrapper margin="title" title="What ?" size="l"></TitleWrapper>
+        <Carousel><Card youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
+          This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
+
+          <Card youtube href="https://calm-dawn-80536.herokuapp.com/" title="Droit(s) Communs" source={Droits} href2="https://github.com/CYL-B/droits-communs.git" techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin>Droit(s) commun(s) is a personal project that I designed and am currently coding to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field. 
+
+I'm still working on it but you can check it out ! 
+ </Card></Carousel>
+      </Layout>
+
+      <Layout id="layout4" layout={{ width: "100vw", height: "100vh" }}>
+        <div ref={ref3}></div>
+        <TitleWrapper margin="title" title="How ?" size="l"></TitleWrapper>
+        <div style={{ display: "flex", justifyContent: "space-evenly", maxHeight: "70%", width: "100%" }}>
+          <div style={{ maxHeight: "100%", overflowY: "auto" }}><TitleWrapper font="zilla" size="s" align="centre">Front-end</TitleWrapper>
+            <CardDivider></CardDivider>
+            <Techno type="front"></Techno></div>
+
+          <div><TitleWrapper font="zilla" size="s" align="centre">Back-end</TitleWrapper>
+            <CardDivider></CardDivider>
+            <Techno type="back"></Techno></div>
+          <div><TitleWrapper font="zilla" size="s" align="centre">Design & more</TitleWrapper>
+            <CardDivider></CardDivider>
+            <Techno type="design"></Techno></div></div>
+      </Layout>
+
+      <div>
+        <Layout id="layout5" layout={{ width: "100vw", height: "100vh", display: "flex", justifyContent: "space-around" }}>
+          <DivContact ref={ref4}>
+            <TitleWrapper margin="title" title="Contact" size="l"></TitleWrapper>
+            <TitleWrapper font="zilla" size="xs"><HighLightWrapper>Let's work together !</HighLightWrapper></TitleWrapper>
+            <CardDivider></CardDivider>
+            <TitleWrapper font="zilla" size="xs">Email : benhammadcamille@hotmail.fr</TitleWrapper>
+          </DivContact>
+          <ContactForm></ContactForm>
+
+        </Layout>
+        <Footer></Footer>
+      </div>
+
+    </React.Fragment>
+
   )
 }
 
