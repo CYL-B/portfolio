@@ -3,28 +3,9 @@ import styled from "styled-components";
 import "@fontsource/zilla-slab";
 
 
-
-export const Button = (props) => {
-const{onClick} = props;
-const{taille} = props;
-
-var width
-var height
-
-if (taille == "normal"){
-    width = "190px";
-    height = "100px"
-} else if (taille =="large"){
-    width="417px"
-    height="100px"
-} else if (taille =="small"){
-    width="70px"
-    height="47px"
-}
-
 const CustomButton = styled.button`
-width: ${width};
-height : ${height};
+width: ${(props) => props.taille="normal"?"190px":"417px"};
+height : ${(props) => props.taille ="normal"?"100px":"100px"};
 border: 10px solid #F6CD8B;
 border-radius: 20px;
 cursor: pointer;
@@ -32,7 +13,7 @@ background : transparent;
 font-family: "Zilla Slab";
 color: #FFFEF2;
 text-align:center;
-font-size : ${taille =="small" ? "15px": "32px"};
+font-size : ${(props) => props.taille ="normal" ?"32px":"15px"};
 &:hover {
     background-color: #F6CD8B
 
@@ -50,7 +31,18 @@ display:flex;
 justify-content : center;
 `
 
+export const Button = (props) => {
+const{onClick} = props;
+
+
+var onClik
+if(props.onClick){
+    var onClik = () =>{
+        onClick()
+        }}
+
+
     return(
-        <Layer><CustomButton disabled={props.disabled } size={taille} onClick={() => onClick()}>{props.children}</CustomButton></Layer>
+        <Layer><CustomButton type={props.type} disabled={props.disabled } size={props.taille} onClick={onClik}>{props.children}</CustomButton></Layer>
     )
 }

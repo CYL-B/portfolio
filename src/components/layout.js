@@ -6,7 +6,6 @@ import { createGlobalStyle } from "styled-components"
 
 import { getImage } from "gatsby-plugin-image"
 
-import { BgImage } from 'gbimage-bridge';
 
 
 const GlobalStyle = createGlobalStyle`

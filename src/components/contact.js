@@ -4,9 +4,7 @@ import "@fontsource/zilla-slab";
 import { Field, Formik, ErrorMessage, Form } from 'formik';
 import axios from "axios";
 
-import { Button } from "./button"
-import { propTypes } from "gatsby-plugin-image/dist/src/components/gatsby-image.server";
-
+// Formulaire contact
 const Input = styled(Field)`
 width:417px;
 height: 66px;
@@ -58,63 +56,63 @@ padding:10px;
     }`
 
 
-    // const validate = values => {
-    //     const errors = {};
-    //     if (!values.fname) {
-    //       errors.fname = <span style={{color:"red"}}>Required</span>;
-    //     } else if (values.fname.length > 15) {
-    //       errors.fname = 'Must be 15 characters or less';
-    //     }
-      
-    //     if (!values.name) {
-    //       errors.name = <span style={{color:"red"}}>Required</span>;
-    //     } else if (values.name.length > 20) {
-    //       errors.name = 'Must be 20 characters or less';
-    //     }
-      
-    //     if (!values.email) {
-    //       errors.email = <span style={{color:"red"}}>Required</span>;
-    //     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    //       errors.email = 'Invalid email address';
-    //     }
-    //     if(!values.message){
-    //         errors.message = <span style={{color:"red"}}>Required</span>
-    //     }
-      
-    //     return errors;
-    //   }; 
+//Bouton de validation
+    const ButtonBase = styled.button`
+    width: 417px;
+    height :100px;
+    border: 10px solid #F6CD8B;
+    border-radius: 20px;
+    cursor: pointer;
+    background : transparent;
+    font-family: Zilla Slab;
+    color: #FFFEF2;
+    text-align:center;
+    font-size :32px;
+    &:hover {
+        background-color: #F6CD8B
+    
+        ;
+      }
+    &:disabled{
+        background:  #fff;
+        color: #ccc;
+        cursor: no-drop
+    }
+    `
+    
+    const Layer = styled.div`
+    display:flex;
+    justify-content : center;
+    `
+
+const ContactButton = (props) =>{
+  return(
+    <Layer><ButtonBase>{props.children}</ButtonBase></Layer>
+  )
+}
 
 const ContactForm = () => {
 
-    // const formik = useFormik({
-    //     initialValues: {
-    //         email: '', name: '', fname: '', message: ''
-    //     }, validate,
-    //     onSubmit: values => {
-    //         alert(JSON.stringify(values, null, 2));
-    //     },
-    // });
-
+ 
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [serverState, setServerState] = useState({
-      submitting: false,
-      status: null
-    });
-    const handleServerResponse = (ok, msg, form) => {
-      setServerState({
-        submitting: false,
-        status: { ok, msg }
-      });
-      if (ok) {
-        form.reset();
-      }
-    };
+    // const [serverState, setServerState] = useState({
+    //   submitting: false,
+    //   status: null
+    // });
+    // const handleServerResponse = (ok, msg, form) => {
+    //   setServerState({
+    //     submitting: false,
+    //     status: { ok, msg }
+    //   });
+    //   if (ok) {
+    //     form.reset();
+    //   }
+    // };
     const handleOnSubmit = (values) => {
       // e.preventDefault();
       
       const form = values;
-      setServerState({ submitting: true });
-      console.log(serverState)
+    
       axios({
         method: "post",
         url: "https://getform.io/f/2987863d-1799-4003-a9af-015b367fa510",
@@ -122,7 +120,8 @@ const ContactForm = () => {
        
       })
 
-      setIsSubmitted(true)
+      setIsSubmitted(true);
+      form.reset()
         // .then(r => {
         //   handleServerResponse(true, "Thanks!", form);
         // })
@@ -200,9 +199,8 @@ const ContactForm = () => {
          <div>{errors.message}</div>
        ) : null} */}
        <ErrorMessage name="message"></ErrorMessage>
-       <button type="submit"></button>
-       {isSubmitted?<div>Form submitted ! </div> :null}
-                {/* <Button type="submit" taille="large" disabled={isSubmitting}>Send</Button> */}
+       {isSubmitted?<div style={{color:"green"}}>Form submitted ! </div> :null}
+                <ContactButton type="submit">Send</ContactButton>
             </Container>
         </FormWrapp>
        )}
