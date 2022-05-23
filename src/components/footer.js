@@ -16,7 +16,7 @@ background:transparent;
 const Footer =() =>{
 
     return(
-        <Wrapper><TitleWrapper align='centre'>(c)Camille Benhammadi</TitleWrapper></Wrapper>
+        <Wrapper><TitleWrapper align='Centre'>(c)Camille Benhammadi</TitleWrapper></Wrapper>
     )
 }
 

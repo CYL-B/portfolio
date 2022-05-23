@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "@fontsource/zilla-slab";
 import { Figma, VisualStudio, Nodejs, Adobe, ReactLogo, Javascript, Css3, Html5, Redux, Bootstrap, Git} from '@styled-icons/boxicons-logos'//mongoDB + heroku +npm
 import {Plus} from "@styled-icons/boxicons-regular";
-import {Mongodb, Expo, Heroku, Miro, Styledcomponents, Gatsby, Jest } from'@styled-icons/simple-icons'
+import {Mongodb, Expo, Heroku, Miro, Styledcomponents, Gatsby} from'@styled-icons/simple-icons'
 import {StyledIconBase} from '@styled-icons/styled-icon'
 import {TitleWrapper} from './text'
 
@@ -36,17 +36,13 @@ const IconStyleWrapper = styled.div`
     
   }`
 
-  export const Techno = (props) => {
 
-    const {type} = props;
-
-    var tableau = [[{type: <Figma></Figma>,
+  var tableau = [[{type: <Figma></Figma>,
   name:"Figma"}, {type:<Miro></Miro>, name:"Miro"}, {type: <Adobe></Adobe>, name:"Photoshop"}, {type : <VisualStudio></VisualStudio>, name:"Visualstudio"}, {type:<Git></Git>, name:"Git & Github"},{type:<Plus></Plus>, name:"Agile & SCRUM"} ],  [{type: <Nodejs></Nodejs>, name:"Express/Nodejs"}, {type:<Mongodb></Mongodb>, name:"Mongodb"},{type:<Heroku></Heroku>, name:"Heroku"}, {type:<Expo></Expo>, name:"Expo"}], [{type : <Javascript></Javascript>, name:"Javascript"}, {type: <Css3></Css3>, name:"CSS"}, {type : <Html5></Html5>, name:"HTML"}, {type: <ReactLogo></ReactLogo>, name:"React/ReactNative"}, {type: <Redux></Redux>, name:"Redux"}, {type:<Bootstrap></Bootstrap>, name:"Bootstrap"}, {type:<Styledcomponents></Styledcomponents>, name:"Styled-components"}, {type:<Gatsby></Gatsby>, name:"Gatsby"}]];
 
-    var tab 
-
-    if(type ==="design"){
-      tab = tableau[0].map((element, i)=>{
+  
+    
+    var design  = tableau[0].map((element, i)=>{
 
         return(
           <List key={i} >
@@ -54,8 +50,8 @@ const IconStyleWrapper = styled.div`
                 </List>
         )
       })
-    } else if (type ==="back"){
-      tab = tableau[1].map((element, i)=>{
+    
+      var backend = tableau[1].map((element, i)=>{
 
         return(
           <List key={i}>
@@ -63,8 +59,8 @@ const IconStyleWrapper = styled.div`
                 </List>
         )
       })
-    } else if (type ==="front"){
-      tab = tableau[2].map((element, i)=>{
+    
+      var frontend = tableau[2].map((element, i)=>{
 
         return(
           <List key={i}>
@@ -72,14 +68,40 @@ const IconStyleWrapper = styled.div`
                 </List>
         )
       })
-    }
+    
+
+  export const Design = (props) => {
 
 
 
     return(
         
-            <UnorderedList data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration} type={type}>
-                {tab}
+            <UnorderedList data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>
+                {design}
+            </UnorderedList>
+ 
+    )
+  }
+
+  export const Backend = (props) => {
+
+
+
+    return(
+        
+            <UnorderedList data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>
+                {backend}
+            </UnorderedList>
+ 
+    )
+  }
+
+  export const Frontend = (props) => {
+
+    return(
+        
+            <UnorderedList data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>
+                {frontend}
             </UnorderedList>
  
     )
