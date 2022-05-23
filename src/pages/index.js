@@ -174,7 +174,7 @@ font="Over" easing="ease-in-out-quad" delay="50" margin="0px 0px 50px 50px" titl
             data-aos-easing="ease-in-back"
             data-aos-delay="500"
             data-aos-duration="700"
-            data-aos-offset="0" style={{ maxHeight: "100%", overflowY: "auto" }}><TitleWrapper font="zilla" size="24px" align="centre">Front-end</TitleWrapper>
+            data-aos-offset="0" style={{ maxHeight: "100%", overflowY: "auto" }}><TitleWrapper font="zilla" size="24px" align="Centre">Front-end</TitleWrapper>
             <CardDivider></CardDivider>
             <Frontend></Frontend></div>
 
@@ -182,14 +182,14 @@ font="Over" easing="ease-in-out-quad" delay="50" margin="0px 0px 50px 50px" titl
             data-aos-easing="ease-in-back"
             data-aos-delay="900"
             data-aos-duration="700"
-            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="centre">Back-end</TitleWrapper>
+            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="Centre">Back-end</TitleWrapper>
             <CardDivider></CardDivider>
             <Backend></Backend></div>
           <div data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="1300"
             data-aos-duration="700"
-            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="centre">Design & more</TitleWrapper>
+            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="Centre">Design & more</TitleWrapper>
             <CardDivider></CardDivider>
             <Design></Design></div></div>
       </Layout>
