@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 //custom components
 import Layout from "../components/layout";
 import { TitleWrapper, Subtitle } from "../components/text";
@@ -10,7 +10,6 @@ import ContactForm from "../components/contact";
 import { Avatar } from "../components/avatar";
 import { Card, CardDivider } from "../components/card";
 
-import { Carousel } from "../components/carousel/slider";
 import { Techno } from "../components/list";
 
 import HighLightWrapper from "../components/highlight";
@@ -57,17 +56,20 @@ width:100vw;
 
 const IndexPage = () => {
 
-  AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: 'aos-init', // class applied after initialization
-    animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-  })
+  useEffect = (() =>{
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    })
+  }, [])
+  
 
 
   const ref1 = useRef();
@@ -112,7 +114,7 @@ const IndexPage = () => {
           <Subtitle data="fade-zoom-in" easing="ease-in-back" delay="1000" duration="1000"><HighLightWrapper>Developer</HighLightWrapper></Subtitle>
           <Button taille="normal" onClick={() => handleClick1()}>More</Button>
         </div>
-        <a href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a><a href="https://github.com/CYL-B/droits-communs" rel="noreferrer" target="_blank"><GithubIcon></GithubIcon></a>
+        <a aria-label="linkedin" href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a><a aria-label="git" href="https://github.com/CYL-B/droits-communs" rel="noreferrer" target="_blank"><GithubIcon></GithubIcon></a>
 
       </Layout>
 
@@ -144,7 +146,7 @@ I would love to be part of a team where I can put my skills to good use and lear
     easing="ease-in-out-quad" delay="300" margin="title" size="l">Portfolio</TitleWrapper>
         <div style={{display:"flex", alignItems:"center", width:"100%", height:"100%"}}>
         
-    <TitleWrapper margin="port" data="fade-right"
+    <TitleWrapper margin="title" data="fade-right"
    
     easing="ease-in-out-quad" delay="600"  font="zilla" size="m" >Here are the projects that I have worked on/have been working on as a fullstack developer.</TitleWrapper>
     <div style={{padding:"10px", minWidth:"55vw", maxHeight:"70vh", overflowY:"auto", borderLeft:"5px solid rgba(246, 205, 139, 0.7)", alignSelf:"start"}}>

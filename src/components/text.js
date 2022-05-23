@@ -12,23 +12,23 @@ export const TitleWrapper = (props) => {
     let size 
     let align
 
-    if (props.size == "xl"){
+    if (props.size === "xl"){
     size = "120px"
-    } else if (props.size == "l"){
+    } else if (props.size === "l"){
         size ="60px"
-    } else if (props.size =="m"){
+    } else if (props.size ==="m"){
         size="28px"
-    } else if (props.size=="s"){
+    } else if (props.size==="s"){
         size="24px"
     } else {
         size="14px"
     }
 
-    if (props.align =="droite"){
+    if (props.align ==="droite"){
         align = "right"
-    } else if(props.align =="centre") {
+    } else if(props.align ==="centre") {
         align = "center"}
-        else if(props.align =="justify"){
+        else if(props.align ==="justify"){
             align = "justify"
     } else {
         align=null
@@ -36,31 +36,29 @@ export const TitleWrapper = (props) => {
     
     let font 
 
-    if(props.font =="zilla"){
+    if(props.font ==="zilla"){
         font = "Zilla Slab"
     } else {
         font = "Over the Rainbow"
     }
 
 let italic 
-if (props.italic =="true"){
+if (props.italic ==="true"){
     italic = "italic"
 }
 
 let margin
 
-if (props.margin == "desc"){
+if (props.margin === "desc"){
     margin = "30px 30px 0px 0px"
-} else if(props.margin == "title"){
-    margin="0px 50px 0px 50px"
-} else if (props.margin=="port"){
+} else if(props.margin === "title"){
     margin="0px 50px 0px 50px"
 }
 
 let line
-if (props.line == "true"){
+if (props.line === "true"){
     line = "2.5"
-} else if (props.line =="title"){
+} else if (props.line ==="title"){
 line ="1.0"
 }
 

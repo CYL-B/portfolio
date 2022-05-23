@@ -37,7 +37,7 @@ const{onClick} = props;
 
 var onClik
 if(props.onClick){
-    var onClik = () =>{
+    onClik = () =>{
         onClick()
         }}
 
