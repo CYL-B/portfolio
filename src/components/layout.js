@@ -38,8 +38,8 @@ const Layout = (props) => {
 
   const {layout} = props;
   return (
-    <React.Fragment>
-      <GlobalStyle />
+    <React.Fragment >
+      <GlobalStyle ref={props.ref} />
       <div style={layout}>{props.children}</div>
      
     </React.Fragment>

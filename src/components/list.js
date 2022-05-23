@@ -49,7 +49,7 @@ const IconStyleWrapper = styled.div`
       tab = tableau[0].map((element, i)=>{
 
         return(
-          <List i >
+          <List key={i} >
                     <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
                 </List>
         )
@@ -58,7 +58,7 @@ const IconStyleWrapper = styled.div`
       tab = tableau[1].map((element, i)=>{
 
         return(
-          <List i>
+          <List key={i}>
                     <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
                 </List>
         )
@@ -67,7 +67,7 @@ const IconStyleWrapper = styled.div`
       tab = tableau[2].map((element, i)=>{
 
         return(
-          <List i>
+          <List key={i}>
                     <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
                 </List>
         )
@@ -78,7 +78,7 @@ const IconStyleWrapper = styled.div`
 
     return(
         
-            <UnorderedList type={type}>
+            <UnorderedList data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration} type={type}>
                 {tab}
             </UnorderedList>
  

@@ -31,7 +31,7 @@ export const TitleWrapper = (props) => {
         else if(props.align =="justify"){
             align = "justify"
     } else {
-        align="none"
+        align=null
     }
     
     let font 
@@ -52,7 +52,9 @@ let margin
 if (props.margin == "desc"){
     margin = "30px 30px 0px 0px"
 } else if(props.margin == "title"){
-    margin="0px 0px 0px 50px"
+    margin="0px 50px 0px 50px"
+} else if (props.margin=="port"){
+    margin="0px 50px 0px 50px"
 }
 
 let line
@@ -69,7 +71,7 @@ line ="1.0"
     font-size: ${size};
     text-align: ${align};
     font-style : ${italic};
-    margin:0;
+    padding:${(props)=> props.padding};
     letter-spacing : 0.2rem;
     margin:${margin};
     line-height:${line}
@@ -80,7 +82,7 @@ line ="1.0"
 
     return(
 
-       <Title italic={props.italic} font={props.font} size={props.size} align={props.align}>{props.title}{props.children}</Title>
+       <Title data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} italic={props.italic} font={props.font} padding={props.padding} size={props.size} data-aos-duration={props.duration} align={props.align} data-aos-offset={props.offset} data-aos-anchor-placement={props.placement}>{props.title}{props.children}</Title>
     )
 }
 
@@ -96,7 +98,7 @@ export const Subtitle = (props) =>{
     
 
 return(
-    <SubTitle>{props.children}</SubTitle>
+    <SubTitle  data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>{props.children}</SubTitle>
 
 )
 };

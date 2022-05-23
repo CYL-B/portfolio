@@ -23,7 +23,7 @@ color:#F6CD8B;
 
 const SCarouselWrapper = styled.div`
   display: flex;
-    margin : 0px 0px 20px 0px;
+    margin : 0px 20px 20px 0px;
     width:100vw;
     
 `;
@@ -42,6 +42,7 @@ width:100%;
   ${props =>
     props.currentSlide &&
     css`
+    width:100%;
       transform: translateX(-${props.currentSlide * 100}%);
     `};
   transition: all 0.5s ease;
@@ -56,13 +57,13 @@ export const Carousel = ({ children }) => {
   ));
 
   return (
-    <div >
+    <div>
       <SCarouselWrapper>
       <SCarouselSlides currentSlide={currentSlide}>
           {activeSlide}
         </SCarouselSlides>
       </SCarouselWrapper>
-      <div style={{display:"flex", justifyContent:'center'}}>
+      <div style={{display:"flex", justifyContent:'center', paddingTop:"100px"}}>
       
         <Left onClick={() => {
           setCurrentSlide((currentSlide - 1 + activeSlide.length) % activeSlide.length)}}></Left>
@@ -74,7 +75,7 @@ export const Carousel = ({ children }) => {
       
 
       </div>
-    </div>
+      </div>
   );
 };
 

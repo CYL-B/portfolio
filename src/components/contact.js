@@ -91,7 +91,7 @@ const ContactButton = (props) =>{
   )
 }
 
-const ContactForm = () => {
+const ContactForm = (props) => {
 
  
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -172,7 +172,7 @@ const ContactForm = () => {
         }}
     >
        {({isSubmitting}) => (
-       <FormWrapp>
+       <FormWrapp data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>
          
             <Container>
                 <Label htmlFor="name">Name</Label>
