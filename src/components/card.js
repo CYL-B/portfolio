@@ -14,12 +14,12 @@ border-radius: 10px;
 @media${devices.mobileS}{
     height:215px;
     width:300px;   
-    margin : 10px auto 150px auto;  
+    margin : 10px auto 170px auto;  
 };
 @media${devices.mobileM}{
     height:215px;
     width:350px;
-    margin : 10px auto 150px auto;
+    margin : 10px auto 170px auto;
 };
 
 @media${devices.mobileL}{
