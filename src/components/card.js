@@ -10,14 +10,16 @@ import { devices } from './responsive';
 const Container = styled.div`
 background:transparent;
 border-radius: 10px;
-margin : 0px auto 20px auto;
+
 @media${devices.mobileS}{
     height:215px;
-    width:350px;     
+    width:300px;   
+    margin : 10px auto 150px auto;  
 };
 @media${devices.mobileM}{
     height:215px;
     width:350px;
+    margin : 10px auto 150px auto;
 };
 
 @media${devices.mobileL}{
@@ -86,7 +88,8 @@ text-shadow:  0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px
 
 
 const Content = styled.p`
-
+max-height:70%;
+overflow-y:auto;
 @media${devices.mobileS}{
     display:${(props)=>props.display?"none":"block"} ;
     font-size: 16px;
@@ -416,7 +419,7 @@ export const Card = (props) => {
         <Container data-aos={props.data} data-aos-delay={props.delay} data-aos-easing={props.easing} data-aos-duration={props.duration}>
 
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", height: "100%", width: "100%" }}><div style={{
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", height: "100%", width: "100%", margin:"10px 0px 10px 0px" }}><div style={{
                 gridColumn: "2/-1", alignSelf: "end", gridRow: "1/2", display: "flex", flexDirection: "column", borderRadius: "20px", justifyContent: "space-around", height: "80%", width: "auto", backgroundColor: "#310e68",
                 backgroundImage: "linear-gradient(316deg, #310e68 0%, #5f0f40 74%)"
             }}><Header>{props.title}</Header>

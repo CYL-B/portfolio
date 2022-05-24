@@ -20,7 +20,7 @@ line-height:${props=>(props.line ?"2.5":"1.0")};
 @media${devices.mobileM}{
     font-size: ${props=>(props.size?"45px":"22px")};
     margin:${props=>(props.margin?"20px 0px 20px 0px":"0px 0px 50px 50px")
-}};
+};};
 
 @media${devices.mobileL}{
     font-size: ${props=>(props.size?"50px":"25px")};

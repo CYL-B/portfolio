@@ -69,6 +69,8 @@ position:fixed;
   
   @media (max-width: 576px) {
     width: 100%;
+    align-items:start;
+   
   }
 
   button {

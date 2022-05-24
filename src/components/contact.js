@@ -19,11 +19,11 @@ outline:none;
 box-shadow: inset 0 0 10px rgba(246, 205, 139, 0.5);
 };
 @media${devices.mobileS}{
-  width:380px;
+  width:300px;
   height: 66px;
 };
 @media${devices.mobileM}{
-  width:417px;
+  width:330px;
   height: 66px;
 };
 
@@ -85,11 +85,11 @@ padding:10px;
     box-shadow: inset 0 0 10px rgba(246, 205, 139, 0.5);
     };
     @media${devices.mobileS}{
-      width:380px;
+      width:300px;
       height: 66px;
     };
     @media${devices.mobileM}{
-      width:417px;
+      width:330px;
       height: 66px;
     };
     
@@ -138,12 +138,12 @@ const ButtonBase = styled.button`
         cursor: no-drop
     };
     @media${devices.mobileS}{
-      width:380px;
+      width:300px;
       height: 100px;
       border: 8px solid #F6CD8B;
     };
     @media${devices.mobileM}{
-      width: 417px;
+      width: 330px;
     height :100px;
     border: 10px solid #F6CD8B;
     };
