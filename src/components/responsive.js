@@ -4,7 +4,7 @@ const sizes = {
     mobileL: '425px',
     tablet: '768px',
     laptop: '1024px',
-    laptopL: '1440px',
+    laptopL: '1440px',//macbook air m1
     desktop: '2560px',
   };
 

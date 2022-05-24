@@ -5,11 +5,11 @@ import { Figma, VisualStudio, Nodejs, Adobe, ReactLogo, Javascript, Css3, Html5,
 import {Plus} from "@styled-icons/boxicons-regular";
 import {Mongodb, Expo, Heroku, Miro, Styledcomponents, Gatsby} from'@styled-icons/simple-icons'
 import {StyledIconBase} from '@styled-icons/styled-icon'
-import {TitleWrapper} from './text'
+import {TextWrapper} from './text'
 
 const UnorderedList = styled.ul`
 list-style:none;
-height:100%;
+overflow-y: auto;
 width:auto;
 display:inline;
 background-color: transparent;
@@ -46,7 +46,7 @@ const IconStyleWrapper = styled.div`
 
         return(
           <List key={i} >
-                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
+                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TextWrapper font="zilla" title={element.name}></TextWrapper>
                 </List>
         )
       })
@@ -55,7 +55,7 @@ const IconStyleWrapper = styled.div`
 
         return(
           <List key={i}>
-                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
+                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TextWrapper font="zilla" title={element.name}></TextWrapper>
                 </List>
         )
       })
@@ -64,7 +64,7 @@ const IconStyleWrapper = styled.div`
 
         return(
           <List key={i}>
-                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TitleWrapper font="zilla" title={element.name}></TitleWrapper>
+                    <IconStyleWrapper>{element.type}</IconStyleWrapper><TextWrapper font="zilla" title={element.name}></TextWrapper>
                 </List>
         )
       })

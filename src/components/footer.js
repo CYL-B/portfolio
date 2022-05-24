@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import "@fontsource/zilla-slab";
-import {TitleWrapper} from './text'
+import {TextWrapper} from './text'
 
 const Wrapper = styled.div`
 width:100%;
@@ -16,7 +16,7 @@ background:transparent;
 const Footer =() =>{
 
     return(
-        <Wrapper><TitleWrapper align='Centre'>(c)Camille Benhammadi</TitleWrapper></Wrapper>
+        <Wrapper><TextWrapper align='Centre'>(c)Camille Benhammadi</TextWrapper></Wrapper>
     )
 }
 

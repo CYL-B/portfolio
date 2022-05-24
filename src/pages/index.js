@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from "react";
 //custom components
 import Layout from "../components/layout";
-import { TitleWrapper, Subtitle } from "../components/text";
+import { TitleWrapper, Subtitle, TextWrapper } from "../components/text";
 import SlideMenu from "../components/menu2";
 import { Button } from "../components/button";
 
 
 import ContactForm from "../components/contact";
 import { Avatar } from "../components/avatar";
-import { Card, CardDivider } from "../components/card";
+import { Card} from "../components/card";
 
 import { Design, Frontend, Backend } from "../components/list";
 
@@ -27,6 +27,15 @@ import 'aos/dist/aos.css';
 //Librairies pour le style
 import styled from "styled-components";
 
+//responsive
+import { devices } from "../components/responsive";
+
+const Divider = styled.hr`
+border: 1px solid ;
+margin: 25px 25px;
+color : #F6CD8B;
+opacity:0.3;`
+
 const LinkedinIcon = styled(Linkedin)`
 width : 45px;
 height : 45px;
@@ -39,19 +48,245 @@ height : 45px;
 color:white;
 margin: 20px`
 
+const DivLayout = styled.div`
+display: flex; 
+
+@media(max-width: 320px){
+  
+  flex-direction: column;
+  flex-grow:1;
+  align-items:center;
+};
+@media(max-width: 375px){
+  flex-direction: column;
+  flex-grow:1;
+  align-items:center;
+};
+
+@media(max-width: 425px){
+
+  flex-direction: column;
+  flex-grow:1;
+  align-items:center;
+};
+
+@media(max-width:768px){
+  flex-direction: column;
+  flex-grow:1;
+  align-items:center;
+};
+
+@media(max-width:1024px){
+  justify-content: space-around;
+  align-items:center
+}
+
+@media(max-width:1440px){
+  justify-content: space-around;
+  align-items:center
+}
+
+@media(max-width:2560px){
+  justify-content: space-around;
+  align-items:center
+}`
 
 const DivContact = styled.div`
 display:flex;
-flex-direction:column`
+flex-direction:column;
+text-align:center
+`
 
 
 const DivAbout = styled.div`
 display: flex;
 width:100vw;
-  justify-content : space-around;
+  
+  @media(max-width: 320px){
+    flex-direction:column;
+    
+  };
+  @media(max-width: 375px){
+    flex-direction:column;
+  };
+  
+  @media(max-width: 425px){
+    flex-direction:column;
+  };
+  
+  @media(max-width:768px){
+ flex-direction:column;
+  };
+  
+  @media(max-width:1024px){
+    flex-direction:column;
+    
+  }
+  
+  @media(max-width:1440px){
+    justify-content : space-around;
+    align-items:center;
+  }
+  
+  @media(max-width:2560px){
+    justify-content : space-around;
+    align-items:center;
+  }
+
+
+`
+
+const DivAbout2=styled.div`
+display: flex;
+flex-direction: column;
+align-content: center;
+
+@media(max-width: 320px){
+  width:100%;
+     
+    
+};
+@media(max-width: 375px){
+  width:100%;
+ 
+};
+
+@media(max-width: 425px){
+  width:100%;
+
+};
+
+@media(max-width:768px){
+  width:100%;
+ 
+};
+
+@media(max-width:1024px){
+ width:100%;
+
+}
+
+@media(max-width:1440px){
+  width: 50%
+}
+
+@media(max-width:2560px){
+  width: 50%
+}
+
+`
+const DivTechno = styled.div`
+width: 100%; 
+display: flex;
+
+@media(max-width: 320px){
+  
+  flex-direction: column;
+  flex-grow:1;
   align-items:center;
+};
+@media(max-width: 375px){
+  flex-direction: column;
+  flex-grow:1;
+  align-items:center;
+};
 
+@media(max-width: 425px){
 
+  flex-wrap: wrap;
+  justify-content:center;
+};
+
+@media(max-width:768px){
+  flex-wrap: wrap;
+  justify-content:center;
+};
+
+@media(max-width:1024px){
+  justify-content:space-evenly;
+}
+
+@media(max-width:1440px){
+  justify-content:space-evenly;
+}
+
+@media(max-width:2560px){
+  justify-content:space-evenly;
+}
+`
+const DivPortfolio = styled.div`
+display: flex;
+
+ @media(max-width: 320px){
+  flex-direction:column 
+
+};
+@media(max-width: 375px){
+  flex-direction:column 
+};
+
+@media(max-width: 425px){
+  flex-direction:column
+};
+
+@media(max-width:768px){
+  flex-direction:column
+};
+
+@media(max-width:1024px){
+  flex-direction:column;
+}
+
+@media(max-width:1440px){
+align-items: center;
+ width: 100%;
+ height: 100%;
+}
+
+@media(max-width:2560px){
+align-items: center;
+ width: 100%;
+ height: 100%;
+} `
+
+const DivPortfolio2 = styled.div`
+padding: 10px;
+ min-width: 55vw; 
+ max-height: 70vh; 
+ overflow-y: auto;
+
+ @media${devices.mobileS}{
+
+  align-self: center     
+};
+@media${devices.mobileM}{
+  
+  align-self: center
+};
+
+@media${devices.mobileL}{
+  
+  align-self: center 
+};
+
+@media${devices.tablet}{
+ 
+  align-self: center
+};
+
+@media${devices.laptop}{
+  
+  align-self: center
+};
+
+@media${devices.laptopL}{
+  border-left: 5px solid rgba(246, 205, 139, 0.7); 
+  align-self: start;   
+};
+@media${devices.desktop}{
+  border-left: 5px solid rgba(246, 205, 139, 0.7); 
+  align-self: start;  
+}
 `
 
 const IndexPage = () => {
@@ -112,20 +347,20 @@ const IndexPage = () => {
 
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90%" }}>
-          <TitleWrapper  margin="50px 0px 50px 0px" data="zoom-out-down" delay="50" title="Camille" size="120px" duration="500" font="Over"></TitleWrapper>
-          <TitleWrapper margin="50px 0px 50px 0px" font="Over" data="zoom-out-down" delay="500" title="Benhammadi" size="120px" duration="500"></TitleWrapper>
+          <TitleWrapper  margin data="zoom-out-down" delay="50" title="Camille" size duration="500" font="Over"></TitleWrapper>
+          <TitleWrapper margin font="Over" data="zoom-out-down" delay="500" title="Benhammadi" size duration="500"></TitleWrapper>
           <Subtitle data="fade-zoom-in" easing="ease-in-back" delay="1000" duration="1000"><HighLightWrapper>Developer</HighLightWrapper></Subtitle>
-          <Button taille="normal" onClick={() => handleClick1()}>More</Button>
+          <Button onClick={() => handleClick1()}>More</Button>
         </div>
         <a aria-label="linkedin" href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a><a aria-label="git" href="https://github.com/CYL-B/droits-communs" rel="noreferrer" target="_blank"><GithubIcon></GithubIcon></a>
 
       </Layout>
 
-      <Layout id="layout2" layout={{ width: "100vw", height: "100vh", margin: "10px 0px 10px 0px" }}>
+      <Layout id="layout2" layout={{ margin: "0px 0px 5% 0px" }}>
         <div ref={ref1}></div>
         <TitleWrapper data="fade-right"
 
-font="Over" easing="ease-in-out-quad" delay="50" margin="0px 0px 50px 50px" title="About me" size="60px"></TitleWrapper>
+font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper>
         <DivAbout>
 
           <div data-aos="fade-up"
@@ -135,24 +370,24 @@ font="Over" easing="ease-in-out-quad" delay="50" margin="0px 0px 50px 50px" titl
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
             data-aos-once="false" style={{ width: "50%", display: "flex", justifyContent: "center" }}><Avatar ></Avatar></div>
-          <div style={{ width: "50%", display: "flex", flexDirection: "column", alignContent: "center" }}><TitleWrapper font="zilla" size="24px">From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TitleWrapper>
-            <TitleWrapper data="fade-left" duration="1500" delay="500" line margin="30px 30px 0px 0px" align="justify" font="zilla" size="14px">Hello !
+          <DivAbout2><TextWrapper font="zilla" size>From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TextWrapper>
+            <TextWrapper data="fade-left" duration="1500" delay="500" line margin align="justify" font="zilla" >Hello !
               I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. In 2021, I joined a french bootcamp called <a style={{ textDecoration: "none" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.
-              I would love to be part of a team where I can put my skills to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> ,Canada.</TitleWrapper></div></DivAbout>
+              I would love to be part of a team where I can put my skills to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> ,Canada.</TextWrapper></DivAbout2></DivAbout>
 
 
       </Layout>
-      <Layout id="layout3" layout={{ margin: "10px 0px 10px 0px", width: "100vw", height: "100vh" }}>
+      <Layout id="layout3" layout={{ margin: "0px 0px 5% 0px"}}>
         <div ref={ref2}></div>
         <TitleWrapper font="Over" data="fade-right"
 
-          easing="ease-in-out-quad" delay="300" margin="0px 0px 50px 50px" size="60px">Portfolio</TitleWrapper>
-        <div style={{ display: "flex", alignItems: "center", width: "100%", height: "100%" }}>
+          easing="ease-in-out-quad" delay="300" >Portfolio</TitleWrapper>
+        <DivPortfolio>
 
-          <TitleWrapper margin="0px 50px 0px 50px" data="fade-right"
+          <div style={{padding:"0px 0px 0px 50px"}}><TextWrapper margin data="fade-right"
 
-            easing="ease-in-out-quad" delay="600" font="zilla" size="28px" >Here are the projects that I have worked on/have been working on as a fullstack developer.</TitleWrapper>
-          <div style={{ padding: "10px", minWidth: "55vw", maxHeight: "70vh", overflowY: "auto", borderLeft: "5px solid rgba(246, 205, 139, 0.7)", alignSelf: "start" }}>
+            easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
+          <DivPortfolio2>
             <Card data="fade-right" delay="500" duration="1000" youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
               This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
 
@@ -160,59 +395,61 @@ font="Over" easing="ease-in-out-quad" delay="50" margin="0px 0px 50px 50px" titl
 
               I'm still working on it but you can check it out !
             </Card>
-          </div>
-        </div>
+          </DivPortfolio2>
+        </DivPortfolio>
       </Layout>
 
-      <Layout id="layout4" layout={{ width: "100vw", height: "100vh", margin: "10px 0px 10px 0px" }}>
+      <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px" }}>
         <div ref={ref3}></div>
         <TitleWrapper font="Over" data="fade-right"
 
-          easing="ease-in-out-quad" delay="300" margin="0px 0px 50px 50px" title="Technologies" size="60px"></TitleWrapper>
-        <div style={{ display: "flex", justifyContent: "space-evenly", maxHeight: "70%", width: "100%" }}>
+          easing="ease-in-out-quad" delay="300"  title="Technologies"></TitleWrapper>
+        <DivTechno>
           <div data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="500"
             data-aos-duration="700"
-            data-aos-offset="0" style={{ maxHeight: "100%", overflowY: "auto" }}><TitleWrapper font="zilla" size="24px" align="Centre">Front-end</TitleWrapper>
-            <CardDivider></CardDivider>
+            data-aos-offset="0" style={{ maxHeight: "70%", overflowY: "auto" }}><TextWrapper font="zilla" size align="Centre">Front-end</TextWrapper>
+            <Divider></Divider>
             <Frontend></Frontend></div>
 
           <div data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="900"
             data-aos-duration="700"
-            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="Centre">Back-end</TitleWrapper>
-            <CardDivider></CardDivider>
+            data-aos-offset="0"><TextWrapper font="zilla" size align="Centre">Back-end</TextWrapper>
+            <Divider></Divider>
             <Backend></Backend></div>
           <div data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="1300"
             data-aos-duration="700"
-            data-aos-offset="0"><TitleWrapper font="zilla" size="24px" align="Centre">Design & more</TitleWrapper>
-            <CardDivider></CardDivider>
-            <Design></Design></div></div>
+            data-aos-offset="0"><TextWrapper font="zilla" size align="Centre">Design & more</TextWrapper>
+            <Divider></Divider>
+            <Design></Design></div></DivTechno>
       </Layout>
 
-      <div>
-        <Layout id="layout5" layout={{ width: "100vw", height: "100vh", display: "flex", justifyContent: "space-around", margin: "10px 0px 10px 0px" }}>
+     
+        <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px" }}>
+        <TitleWrapper font="Over" data="fade-right"
+
+easing="ease-in-out-quad" delay="300"  title="Contact"></TitleWrapper>
+          <DivLayout>
           <DivContact ref={ref4}>
-            <TitleWrapper font="Over" data="fade-right"
+            
+            <TextWrapper data="fade-right"
 
-              easing="ease-in-out-quad" delay="300" margin="0px 0px 30px 0px" title="Contact" size="60px"></TitleWrapper>
-            <TitleWrapper data="fade-right"
+              easing="ease-in-out-quad" delay="600" font="zilla"  size><HighLightWrapper>Let's work together !</HighLightWrapper></TextWrapper>
+            <Divider></Divider>
+            <TextWrapper data="fade-right"
 
-              easing="ease-in-out-quad" delay="600" font="zilla" size="14px"><HighLightWrapper>Let's work together !</HighLightWrapper></TitleWrapper>
-            <CardDivider></CardDivider>
-            <TitleWrapper data="fade-right"
-
-              easing="ease-in-out-quad" delay="900" font="zilla" size="14px">Email : benhammadcamille@hotmail.fr</TitleWrapper>
+              easing="ease-in-out-quad" delay="900" font="zilla" >Email : benhammadcamille@hotmail.fr</TextWrapper>
           </DivContact>
           <ContactForm data="fade-down-left" duration="2000" easing="ease-in-out-cubic"></ContactForm>
-
+          </DivLayout>
         </Layout>
         <Footer></Footer>
-      </div>
+   
 
     </React.Fragment>
 

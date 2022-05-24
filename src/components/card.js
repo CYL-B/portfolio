@@ -4,13 +4,47 @@ import "@fontsource/zilla-slab";
 import { Github, Youtube } from '@styled-icons/boxicons-logos';
 import { StyledIconBase } from '@styled-icons/styled-icon';
 import {LinkAlt} from "@styled-icons/boxicons-regular"
+import { devices } from './responsive';
+
 
 const Container = styled.div`
-height:500px;
-width:750px;
 background:transparent;
 border-radius: 10px;
-margin : 0px auto 20px auto;`
+margin : 0px auto 20px auto;
+@media${devices.mobileS}{
+    height:215px;
+    width:350px;     
+};
+@media${devices.mobileM}{
+    height:215px;
+    width:350px;
+};
+
+@media${devices.mobileL}{
+    height:315px;
+    width:474px; 
+};
+
+@media${devices.tablet}{
+    height:500px;
+    width:750px;   
+};
+
+@media${devices.laptop}{
+    height:500px;
+    width:750px; 
+};
+
+@media${devices.laptopL}{
+    height:500px;
+    width:750px;
+};
+@media${devices.desktop}{
+height:850px;
+width:1275px;
+}
+
+`
 // background:#FFFEF2;
 // border-radius: 10px;
 // box-shadow:30px -30px 0px rgba(246, 205, 139, 0.7), -30px 30px 0px rgba(246, 205, 139, 0.7);
@@ -18,27 +52,154 @@ margin : 0px auto 20px auto;`
 const Header = styled.h1`
 font-family: Zilla Slab;
 margin : 30px 30px 0px 30px;
-font-size : 35px;
 color: #F6CD8B;
 
 text-align:center;
 text-shadow:  0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+
+@media${devices.mobileS}{
+    font-size : 25px        
+};
+@media${devices.mobileM}{
+    font-size : 25px     
+};
+
+@media${devices.mobileL}{
+    font-size : 25px    
+};
+
+@media${devices.tablet}{
+    font-size : 35px;   
+};
+
+@media${devices.laptop}{
+    font-size : 35px;  
+};
+
+@media${devices.laptopL}{
+    font-size : 35px;
+};
+@media${devices.desktop}{
+    font-size : 59px;
+}
 `
 
 
 const Content = styled.p`
-font-size: 16px;
-text-align:justify;
-text-shadow:   1px  1px 2px rgba(18, 4, 10);
-font-family: Zilla Slab;
-margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
-color: #F6CD8B;`
+
+@media${devices.mobileS}{
+    display:${(props)=>props.display?"none":"block"} ;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B;   
+};
+@media${devices.mobileM}{
+    display:${(props)=>props.display?"none":"block"} ;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B;  
+};
+
+@media${devices.mobileL}{
+    display:${(props)=>props.display?"none":"block"} ;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B; 
+};
+
+@media${devices.tablet}{
+    display:block;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B;   
+};
+
+@media${devices.laptop}{
+    display:block;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B;   
+};
+
+@media${devices.laptopL}{
+    display:block;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B;
+};
+@media${devices.desktop}{
+    display:block;
+    font-size: 16px;
+    text-align:justify;
+    text-shadow:   1px  1px 2px rgba(18, 4, 10);
+    font-family: Zilla Slab;
+    margin : ${(props) => props.margin ? "0px" : "20px 50px 0px 50px"} ;
+    color: #F6CD8B; 
+     
+}`
 
 const Divider = styled.hr`
-border: 1px solid ;
+
+@media${devices.mobileS}{
+    display:none 
+};
+@media${devices.mobileM}{
+    display:none  
+};
+
+@media${devices.mobileL}{
+ display:none
+};
+
+@media${devices.tablet}{
+    display: block;
+    border: 1px solid ;
 margin: 25px 25px;
 color : #F6CD8B;
-opacity:0.3;`
+opacity:0.3; 
+};
+
+@media${devices.laptop}{
+    display: block;
+    border: 1px solid ;
+margin: 25px 25px;
+color : #F6CD8B;
+opacity:0.3;
+};
+
+@media${devices.laptopL}{
+    display: block;
+    border: 1px solid ;
+    margin: 25px 25px;
+    color : #F6CD8B;
+    opacity:0.3;
+};
+@media${devices.desktop}{
+    display: block;
+    border: 1px solid ;
+    margin: 25px 25px;
+    color : #F6CD8B;
+    opacity:0.3;
+     
+}`
 
 const IconStyleWrapper = styled.div`
   ${StyledIconBase} {
@@ -63,14 +224,46 @@ const CardImage = styled.img`
   `
 
 const CardImageWrapper = styled.div`
-  width:225px;
-  height:225px;
+  
   border-radius: 50%;
   box-shadow: -4px -4px 0px 1px rgba(246, 205, 139), 4px 4px 0px 1px rgba(246, 205, 139), 4px -4px 0px 1px rgba(246, 205, 139), -4px 4px 0px 1px rgba(246, 205, 139);
   filter: grayscale(1);
   &:hover{
       filter : none;
-  }
+  };
+  @media${devices.mobileS}{
+    width:100px;
+    height:100px    
+};
+@media${devices.mobileM}{
+    width:120px;
+    height:120px
+};
+
+@media${devices.mobileL}{
+    width:132px;
+    height:132px;  
+};
+
+@media${devices.tablet}{
+    width:225px;
+    height:225px;  
+};
+
+@media${devices.laptop}{
+    width:225px;
+    height:225px;  
+};
+
+@media${devices.laptopL}{
+    width:225px;
+  height:225px;
+};
+@media${devices.desktop}{
+    width:225px;
+    height:225px; 
+}
+
   `
 
 const ImageWrapper = styled.div`
@@ -79,6 +272,111 @@ const ImageWrapper = styled.div`
   height: 50%;
   `
 
+  const YoutubeIcon = styled(Youtube)`
+  
+  @media${devices.mobileS}{
+    height:18px;
+    width:18px
+};
+@media${devices.mobileM}{
+    height:20px;
+    width:20px 
+};
+
+@media${devices.mobileL}{
+    height:20px;
+    width:20px 
+};
+
+@media${devices.tablet}{
+    height:40px;
+    width:40px;  
+};
+
+@media${devices.laptop}{
+    height:40px;
+    width:40px;    
+};
+
+@media${devices.laptopL}{
+    height:40px;
+    width:40px;  
+};
+@media${devices.desktop}{
+    height:68px;
+    width:68px;  
+}`
+
+  const GitHubIcon = styled(Github)`
+  
+  @media${devices.mobileS}{
+    height:18px;
+    width:18px
+};
+@media${devices.mobileM}{
+    height:20px;
+    width:20px 
+};
+
+@media${devices.mobileL}{
+    height:20px;
+    width:20px
+};
+
+@media${devices.tablet}{
+    height:40px;
+    width:40px;  
+};
+
+@media${devices.laptop}{
+    height:40px;
+    width:40px;    
+};
+
+@media${devices.laptopL}{
+    height:40px;
+    width:40px;  
+};
+@media${devices.desktop}{
+    height:68px;
+    width:68px;  
+}`
+
+  const LinkAltIcon = styled(LinkAlt)`
+  
+  @media${devices.mobileS}{
+    height:18px;
+    width:18px
+};
+@media${devices.mobileM}{
+    height:20px;
+    width:20px   
+};
+
+@media${devices.mobileL}{
+    height:20px;
+    width:20px
+};
+
+@media${devices.tablet}{
+    height:40px;
+    width:40px;  
+};
+
+@media${devices.laptop}{
+    height:40px;
+    width:40px;    
+};
+
+@media${devices.laptopL}{
+    height:40px;
+    width:40px;  
+};
+@media${devices.desktop}{
+    height:68px;
+    width:68px;  
+}
+  `
 
 export const CardContainer = (props) => {
 
@@ -101,7 +399,7 @@ export const CardHeader = (props) => {
 export const CardContent = (props) => {
     return (
 
-        <Content margin={props.margin}>{props.children}</Content>
+        <Content display={props.display} margin={props.margin}>{props.children}</Content>
     )
 }
 
@@ -127,11 +425,11 @@ export const Card = (props) => {
                     <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", margin: "0px 10px 0px 10px" }}>
 
 
-                        <div><Content margin={props.margin}>{props.techno}</Content> </div>
-                        {props.youtube ? <a aria-label={props.arial} href={props.href} rel="noreferrer" target="_blank" ><IconStyleWrapper><Youtube aria-hidden="true" size="40"></Youtube></IconStyleWrapper></a> : null}
-                        {props.link ? <a aria-label={props.arial3} href={props.href3} rel="noreferrer" target="_blank" ><IconStyleWrapper><LinkAlt aria-hidden="true" size="40"></LinkAlt></IconStyleWrapper></a> : null}
+                        <div><Content display margin={props.margin}>{props.techno}</Content> </div>
+                        {props.youtube ? <a aria-label={props.arial} href={props.href} rel="noreferrer" target="_blank" ><IconStyleWrapper><YoutubeIcon aria-hidden="true"></YoutubeIcon></IconStyleWrapper></a> : null}
+                        {props.link ? <a aria-label={props.arial3} href={props.href3} rel="noreferrer" target="_blank" ><IconStyleWrapper><LinkAltIcon aria-hidden="true"></LinkAltIcon></IconStyleWrapper></a> : null}
 
-                        <a aria-label={props.arial2} href={props.href2} rel="noreferrer" target="_blank"> <IconStyleWrapper><Github aria-hidden="true" size="40"></Github></IconStyleWrapper></a></div>
+                        <a aria-label={props.arial2} href={props.href2} rel="noreferrer" target="_blank"> <IconStyleWrapper><GitHubIcon aria-hidden="true" ></GitHubIcon></IconStyleWrapper></a></div>
                 </div>
             </div>
                 <ImageWrapper><CardImageWrapper><CardImage fit={props.fit} alt={props.alt} src={props.source}></CardImage></CardImageWrapper></ImageWrapper></div>
