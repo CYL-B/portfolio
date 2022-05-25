@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React, { useState, useRef } from 'react';
 import { useOnClickOutside } from "../hooks";
 import "@fontsource/zilla-slab";
+import { BookOpen, Laptop, MailSend, ArrowToRight} from '@styled-icons/boxicons-regular';
 
 
 const StyledBurger = styled.button`
@@ -122,18 +123,18 @@ const SlideMenu = (props) => {
       <StyledMenu  open={open} setOpen={setOpen}>
         
           <button setOpen={setOpen} onClick={()=> {setOpen(!open);handleClick1()}}><span role="img" aria-label="about us"></span>
-          About me</button>
+          <ArrowToRight style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>About me</button>
         
       
           <button onClick={()=> {setOpen(!open);handleClick2()}}><span role="img" aria-label="price"></span>
-          Portfolio</button>
+          <BookOpen style={{height:"2rem", padding:"0px 10px 0px 10px"}}></BookOpen>Portfolio</button>
         
      
           <button onClick={()=> {setOpen(!open); handleClick3()}}><span role="img" aria-label="contact"></span>
-          Technologies</button>
+          <Laptop style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>Technologies</button>
         
           <button onClick={()=> {setOpen(!open); handleClick4()}}><span role="img" aria-label="contact"></span>
-          Contact</button>
+          <MailSend style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>Contact</button>
         
       </StyledMenu>
     </div>

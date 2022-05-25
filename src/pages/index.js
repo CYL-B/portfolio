@@ -31,10 +31,41 @@ import styled from "styled-components";
 import { devices } from "../components/responsive";
 
 const Divider = styled.hr`
-border: 1px solid ;
-margin: 25px 25px;
-color : #F6CD8B;
-opacity:0.3;`
+border: ${props=>(props.border?"0px":"1px solid")} ;
+margin: ${props=>(props.margin?"20px 20px":"25px 25px")};
+color : ${props=>(props.color?"transparent":"#F6CD8B")};
+opacity:0.3;
+@media${devices.mobileS}{
+  display:block;
+     
+};
+@media${devices.mobileM}{
+  
+  display:block;
+};
+
+@media${devices.mobileL}{
+  
+  display:block;
+};
+
+@media${devices.tablet}{
+  display:block; 
+  
+};
+
+@media${devices.laptop}{
+  
+  display:${props=>(props.display?"none":"block")}  
+};
+
+@media${devices.laptopL}{
+  
+ display:${props=>(props.display?"none":"block")}  
+};
+@media${devices.desktop}{
+  display:${props=>(props.display?"none":"block")}  
+}`
 
 const LinkedinIcon = styled(Linkedin)`
 width : 45px;
@@ -280,16 +311,15 @@ padding: 10px;
 };
 
 @media${devices.laptopL}{
-  border-left: 5px solid rgba(246, 205, 139, 0.7); 
+  
   align-self: start;   
 };
 @media${devices.desktop}{
-  border-left: 5px solid rgba(246, 205, 139, 0.7); 
   align-self: start;  
 }
 `
-
-const IndexPage = () => {
+// border-left: 5px solid rgba(246, 205, 139, 0.7); 
+const IndexPage = (props) => {
 
   useEffect (() => {
     const animate = () => {
@@ -372,7 +402,7 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
             data-aos-once="false" style={{ width: "50%", display: "flex", justifyContent: "center" }}><Avatar ></Avatar></div>
           <DivAbout2><TextWrapper font="zilla" size>From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TextWrapper>
             <TextWrapper data="fade-left" duration="1500" delay="500" line margin align="justify" font="zilla" >Hello !
-              I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. In 2021, I joined a french bootcamp called <a style={{ textDecoration: "none" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.
+              I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. <Divider border margin display color/>In 2021, I joined a french bootcamp called <a style={{ textDecoration: "underline dotted", fontWeight:"bold", color:"inherit" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.<Divider border margin display color/>
               I would love to be part of a team where I can put my skills to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> ,Canada.</TextWrapper></DivAbout2></DivAbout>
 
 
@@ -388,10 +418,10 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
 
             easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
           <DivPortfolio2>
-            <Card data="fade-right" delay="500" duration="1000" youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
+            <Card href4="https://youtu.be/Fx4hOgKBU04" data="fade-right" delay="500" duration="1000" youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
               This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
 
-            <Card link href3="https://calm-dawn-80536.herokuapp.com/" title="Droit(s) Communs" source={Droits} href2="https://github.com/CYL-B/droits-communs.git" techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin>Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
+            <Card href4="https://calm-dawn-80536.herokuapp.com/" link href3="https://calm-dawn-80536.herokuapp.com/" title="Droit(s) Communs" source={Droits} href2="https://github.com/CYL-B/droits-communs.git" techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin>Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
 
               I'm still working on it but you can check it out !
             </Card>

@@ -25,25 +25,30 @@ border-radius: 10px;
 @media${devices.mobileL}{
     height:315px;
     width:474px; 
+    margin : 10px auto 10px auto;
 };
 
 @media${devices.tablet}{
     height:500px;
     width:750px;   
+    margin : 10px auto 10px auto;
 };
 
 @media${devices.laptop}{
     height:500px;
     width:750px; 
+    margin : 10px auto 10px auto;
 };
 
 @media${devices.laptopL}{
     height:500px;
     width:750px;
+    margin : 10px auto 10px auto;
 };
 @media${devices.desktop}{
 height:850px;
 width:1275px;
+margin : 10px auto 10px auto;
 }
 
 `
@@ -57,7 +62,7 @@ margin : 30px 30px 0px 30px;
 color: #F6CD8B;
 
 text-align:center;
-text-shadow:  0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4, 2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd, 3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4, 5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd, 6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4, 8px 7px 0px #5dabcd;
+text-shadow:  0 1px 0px #9CA9AB, 1px 0 0px #9CA9AB, 1px 2px 1px #9CA9AB, 2px 1px 1px #9CA9AB, 2px 3px 2px #9CA9AB, 3px 2px 2px #9CA9AB, 3px 4px 2px #9CA9AB, 4px 3px 3px #9CA9AB, 4px 5px 3px #9CA9AB, 5px 4px 2px #9CA9AB, 5px 6px 2px #9CA9AB;
 
 @media${devices.mobileS}{
     font-size : 25px        
@@ -223,6 +228,7 @@ const CardImage = styled.img`
   border-radius: 50%;
   &:hover{
     filter : none;
+    cursor:pointer;
 }
   `
 
@@ -435,7 +441,7 @@ export const Card = (props) => {
                         <a aria-label={props.arial2} href={props.href2} rel="noreferrer" target="_blank"> <IconStyleWrapper><GitHubIcon aria-hidden="true" ></GitHubIcon></IconStyleWrapper></a></div>
                 </div>
             </div>
-                <ImageWrapper><CardImageWrapper><CardImage fit={props.fit} alt={props.alt} src={props.source}></CardImage></CardImageWrapper></ImageWrapper></div>
+                <ImageWrapper><CardImageWrapper><a aria-label={props.arial4} href={props.href4} rel="noreferrer" target="_blank"><CardImage fit={props.fit} alt={props.alt} src={props.source}></CardImage></a></CardImageWrapper></ImageWrapper></div>
 
         </Container>
     )
