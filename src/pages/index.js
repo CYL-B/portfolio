@@ -403,7 +403,8 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
           <DivAbout2><TextWrapper font="zilla" size>From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TextWrapper>
             <TextWrapper data="fade-left" duration="1500" delay="500" line margin align="justify" font="zilla" >Hello !
               I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. <Divider border margin display color/>In 2021, I joined a french bootcamp called <a style={{ textDecoration: "underline dotted", fontWeight:"bold", color:"inherit" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.<Divider border margin display color/>
-              I would love to be part of a team where I can put my skills to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> ,Canada.</TextWrapper></DivAbout2></DivAbout>
+              I would love to be part of a team where I can put my <button style={{ all: "unset", fontWeight:"bold", textDecoration: "underline dotted",
+  cursor:" pointer"}} onClick={()=>handleClick3()}>skills</button> to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> , Canada.</TextWrapper></DivAbout2></DivAbout>
 
 
       </Layout>
@@ -469,7 +470,12 @@ easing="ease-in-out-quad" delay="300"  title="Contact"></TitleWrapper>
             
             <TextWrapper data="fade-right"
 
-              easing="ease-in-out-quad" delay="600" font="zilla"  size><HighLightWrapper>Let's work together !</HighLightWrapper></TextWrapper>
+              easing="ease-in-out-quad" delay="600" font="zilla"  size><HighLightWrapper>Let's work together !</HighLightWrapper> </TextWrapper>
+              <hr style={{visibility:"hidden"}}></hr>
+              
+              <TextWrapper data="fade-right"
+
+easing="ease-in-out-quad" delay="7c00" font="zilla">I am open to any job opportunity that would match my profile and set of skills.</TextWrapper>
             <Divider></Divider>
             <TextWrapper data="fade-right"
 

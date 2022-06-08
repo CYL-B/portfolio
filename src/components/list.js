@@ -24,7 +24,7 @@ justify-content: start;
 
 const IconStyleWrapper = styled.div`
   ${StyledIconBase} {
-    cursor: pointer;
+    
     display:inline-block;
    margin :0px 10px 10px 0px;
    color:#2e4057;
