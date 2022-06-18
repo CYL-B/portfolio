@@ -23,6 +23,7 @@ import Droits from "../images/Droits communs.png";
 //animation
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Arrow from '../components/animated/down.gif'
 
 //Librairies pour le style
 import styled from "styled-components";
@@ -318,8 +319,7 @@ padding: 10px;
   align-self: start;  
 }
 `
-// border-left: 5px solid rgba(246, 205, 139, 0.7); 
-const IndexPage = (props) => {
+const IndexPage = () => {
 
   useEffect (() => {
     const animate = () => {
@@ -382,6 +382,7 @@ const IndexPage = (props) => {
           <Subtitle data="fade-zoom-in" easing="ease-in-back" delay="1000" duration="1000"><HighLightWrapper>Developer</HighLightWrapper></Subtitle>
           <Button onClick={() => handleClick1()}>More</Button>
         </div>
+        
         <a aria-label="linkedin" href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a><a aria-label="git" href="https://github.com/CYL-B/droits-communs" rel="noreferrer" target="_blank"><GithubIcon></GithubIcon></a>
 
       </Layout>
@@ -413,12 +414,15 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
         <TitleWrapper font="Over" data="fade-right"
 
           easing="ease-in-out-quad" delay="300" >Portfolio</TitleWrapper>
+         <div style={{display:"flex", justifyContent:"flex-end", padding:"0px 20px 0px 0px"}}><img src={Arrow} alt="Down Arrow" /></div>
         <DivPortfolio>
 
           <div style={{padding:"0px 0px 0px 50px"}}><TextWrapper margin data="fade-right"
 
             easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
+            
           <DivPortfolio2>
+          
             <Card href4="https://youtu.be/Fx4hOgKBU04" data="fade-right" delay="500" duration="1000" youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
               This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
 

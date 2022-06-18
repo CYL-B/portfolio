@@ -22,7 +22,7 @@ module.exports = {
         color: `#F4ECE4`,
         showSpinner: true,
       },
-    },
+    }
     
 
   ]
