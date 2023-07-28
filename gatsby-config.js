@@ -2,8 +2,9 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Camille's portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Camille Fullstack Developer`,
+    description: `Hi ! I'm Camille, I'm a web developer and this is where I showcase what I can do.`,
+    siteUrl: `https://camillefullstackdeveloper.gatsbyjs.io`
   },
   plugins: ["gatsby-plugin-styled-components",
     "gatsby-plugin-image",

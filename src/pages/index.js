@@ -8,7 +8,7 @@ import { Button } from "../components/button";
 
 import ContactForm from "../components/contact";
 import { Avatar } from "../components/avatar";
-import { Card} from "../components/card";
+import { Card } from "../components/card";
 
 import { Design, Frontend, Backend } from "../components/list";
 
@@ -30,6 +30,10 @@ import styled from "styled-components";
 
 //responsive
 import { devices } from "../components/responsive";
+
+//SEO
+import { SEO } from "../components/seo";
+
 
 const Divider = styled.hr`
 border: ${props=>(props.border?"0px":"1px solid")} ;
@@ -497,3 +501,7 @@ easing="ease-in-out-quad" delay="7c00" font="zilla">I am open to any job opportu
 }
 
 export default IndexPage
+
+export const Head = () => (
+  <SEO />
+)
