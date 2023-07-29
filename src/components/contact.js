@@ -274,25 +274,25 @@ const ContactForm = (props) => {
 
           <Container>
             <Label htmlFor="name">Name</Label>
-            <Input name="name"></Input>
+            <Input as={Input} name="name" id="name"></Input>
             {/* {touched.name && errors.name ? (
          <div>{errors.name}</div>
        ) : null} */}
             <ErrorMessage name="name"></ErrorMessage>
             <Label htmlFor="fname">First Name</Label>
-            <Input name="fname" ></Input>
+            <Input as={Input} name="fname" id="fname"></Input>
             {/* {touched.fname && errors.fname ? (
          <div>{errors.fname}</div>
        ) : null} */}
             <ErrorMessage name="fname"></ErrorMessage>
             <Label htmlFor="email">Email</Label>
-            <Input type="email" name="email"></Input>
+            <Input as={Input} type="email" name="email" id="email"></Input>
             {/* {touched.email && errors.email ? (
          <div>{errors.email}</div>
        ) : null}  */}
             <ErrorMessage name="email"></ErrorMessage>
             <Label htmlFor="message">Message</Label>
-            <Field as={TextArea} name="message"></Field>
+            <Field as={TextArea} name="message" id="messqge"></Field>
             {/* {touched.message && errors.message ? (
          <div>{errors.message}</div>
        ) : null} */}

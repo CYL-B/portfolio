@@ -36,9 +36,9 @@ import { SEO } from "../components/seo";
 
 
 const Divider = styled.hr`
-border: ${props=>(props.border?"0px":"1px solid")} ;
-margin: ${props=>(props.margin?"20px 20px":"25px 25px")};
-color : ${props=>(props.color?"transparent":"#F6CD8B")};
+border: ${props => (props.border ? "0px" : "1px solid")} ;
+margin: ${props => (props.margin ? "20px 20px" : "25px 25px")};
+color : ${props => (props.color ? "transparent" : "#F6CD8B")};
 opacity:0.3;
 @media${devices.mobileS}{
   display:block;
@@ -61,15 +61,15 @@ opacity:0.3;
 
 @media${devices.laptop}{
   
-  display:${props=>(props.display?"none":"block")}  
+  display:${props => (props.display ? "none" : "block")}  
 };
 
 @media${devices.laptopL}{
   
- display:${props=>(props.display?"none":"block")}  
+ display:${props => (props.display ? "none" : "block")}  
 };
 @media${devices.desktop}{
-  display:${props=>(props.display?"none":"block")}  
+  display:${props => (props.display ? "none" : "block")}  
 }`
 
 const LinkedinIcon = styled(Linkedin)`
@@ -172,7 +172,7 @@ width:100vw;
 
 `
 
-const DivAbout2=styled.div`
+const DivAbout2 = styled.div`
 display: flex;
 flex-direction: column;
 align-content: center;
@@ -325,7 +325,7 @@ padding: 10px;
 `
 const IndexPage = () => {
 
-  useEffect (() => {
+  useEffect(() => {
     const animate = () => {
       AOS.init({
         // Global settings:
@@ -381,12 +381,12 @@ const IndexPage = () => {
 
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "90%" }}>
-          <TitleWrapper  margin data="zoom-out-down" delay="50" title="Camille" size duration="500" font="Over"></TitleWrapper>
+          <TitleWrapper margin data="zoom-out-down" delay="50" title="Camille" size duration="500" font="Over" ></TitleWrapper>
           <TitleWrapper margin font="Over" data="zoom-out-down" delay="500" title="Benhammadi" size duration="500"></TitleWrapper>
           <Subtitle data="fade-zoom-in" easing="ease-in-back" delay="1000" duration="1000"><HighLightWrapper>Developer</HighLightWrapper></Subtitle>
-          <Button onClick={() => handleClick1()}>More</Button>
+          <Button onClick={() => handleClick1()} ariaLabel="Go to about me" >More</Button>
         </div>
-        
+
         <a aria-label="linkedin" href="https://www.linkedin.com/in/camille-benhammadi-19726311b/?locale=en_US" rel="noreferrer" target="_blank"><LinkedinIcon /></a><a aria-label="git" href="https://github.com/CYL-B/droits-communs" rel="noreferrer" target="_blank"><GithubIcon></GithubIcon></a>
 
       </Layout>
@@ -395,7 +395,7 @@ const IndexPage = () => {
         <div ref={ref1}></div>
         <TitleWrapper data="fade-right"
 
-font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper>
+          font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper>
         <DivAbout>
 
           <div data-aos="fade-up"
@@ -407,30 +407,50 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
             data-aos-once="false" style={{ width: "50%", display: "flex", justifyContent: "center" }}><Avatar ></Avatar></div>
           <DivAbout2><TextWrapper font="zilla" size>From <HighLightWrapper>law</HighLightWrapper> to <HighLightWrapper>tech</HighLightWrapper></TextWrapper>
             <TextWrapper data="fade-left" duration="1500" delay="500" line margin align="justify" font="zilla" >Hello !
-              I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. <Divider border margin display color/>In 2021, I joined a french bootcamp called <a style={{ textDecoration: "underline dotted", fontWeight:"bold", color:"inherit" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.<Divider border margin display color/>
-              I would love to be part of a team where I can put my <button style={{ all: "unset", fontWeight:"bold", textDecoration: "underline dotted",
-  cursor:" pointer"}} onClick={()=>handleClick3()}>skills</button> to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> , Canada.</TextWrapper></DivAbout2></DivAbout>
+              I’m Camille, I'm a french jurist turned <HighLightWrapper>full stack developer</HighLightWrapper> with a keen interest for design, UX/UI and accessibility. <Divider border margin display color />In 2021, I joined a french bootcamp called <a style={{ textDecoration: "underline dotted", fontWeight: "bold", color: "inherit" }} rel="noreferrer" target="_blank" href="https://www.lacapsule.academy/">"La Capsule"</a> to learn how to code with <HighLightWrapper>Javascript</HighLightWrapper> and worked as a teacher’s assistant for 2 months.<Divider border margin display color />
+              I would love to be part of a team where I can put my <button style={{
+                all: "unset", fontWeight: "bold", textDecoration: "underline dotted",
+                cursor: " pointer"
+              }} onClick={() => handleClick3()} aria-label="Go to skills section">skills</button> to good use and learn new ones. I'm based in <HighLightWrapper>Montréal</HighLightWrapper> , Canada.</TextWrapper></DivAbout2></DivAbout>
 
 
       </Layout>
-      <Layout id="layout3" layout={{ margin: "0px 0px 5% 0px"}}>
+      <Layout id="layout3" layout={{ margin: "0px 0px 5% 0px" }}>
         <div ref={ref2}></div>
         <TitleWrapper font="Over" data="fade-right"
 
           easing="ease-in-out-quad" delay="300" >Portfolio</TitleWrapper>
-         <div style={{display:"flex", justifyContent:"flex-end", padding:"0px 20px 0px 0px"}}><img src={Arrow} alt="Down Arrow" /></div>
+        <div style={{ display: "flex", justifyContent: "flex-end", padding: "0px 20px 0px 0px" }}><img src={Arrow} alt="Down Arrow" /></div>
         <DivPortfolio>
 
-          <div style={{padding:"0px 0px 0px 50px"}}><TextWrapper margin data="fade-right"
+          <div style={{ padding: "0px 0px 0px 50px" }}><TextWrapper margin data="fade-right"
 
             easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
-            
+
           <DivPortfolio2>
-          
-            <Card href4="https://youtu.be/Fx4hOgKBU04" data="fade-right" delay="500" duration="1000" youtube href="https://youtu.be/Fx4hOgKBU04" href2="https://github.com/CYL-B/Kiosk-front" source={Kiosk} title="KIOSK" techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin>KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
+
+            <Card href4="https://youtu.be/Fx4hOgKBU04"
+              data="fade-right"
+              delay="500"
+              duration="1000"
+              youtube
+              href="https://youtu.be/Fx4hOgKBU04"
+              href2="https://github.com/CYL-B/Kiosk-front"
+              source={Kiosk}
+              title="KIOSK"
+              techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin
+              alt="Kiosk welcome page">KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
               This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
 
-            <Card href4="https://calm-dawn-80536.herokuapp.com/" link href3="https://calm-dawn-80536.herokuapp.com/" title="Droit(s) Communs" source={Droits} href2="https://github.com/CYL-B/droits-communs.git" techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin>Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
+            <Card
+              href4="https://calm-dawn-80536.herokuapp.com/"
+              link
+              href3="https://calm-dawn-80536.herokuapp.com/"
+              title="Droit(s) Communs"
+              source={Droits}
+              href2="https://github.com/CYL-B/droits-communs.git"
+              techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin
+              alt="Droits Commun(s) welcome page">Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
 
               I'm still working on it but you can check it out !
             </Card>
@@ -442,7 +462,7 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
         <div ref={ref3}></div>
         <TitleWrapper font="Over" data="fade-right"
 
-          easing="ease-in-out-quad" delay="300"  title="Technologies"></TitleWrapper>
+          easing="ease-in-out-quad" delay="300" title="Technologies"></TitleWrapper>
         <DivTechno>
           <div data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
@@ -468,32 +488,32 @@ font="Over" easing="ease-in-out-quad" delay="50" title="About me"></TitleWrapper
             <Design></Design></div></DivTechno>
       </Layout>
 
-     
-        <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px" }}>
+
+      <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px" }}>
         <TitleWrapper font="Over" data="fade-right"
 
-easing="ease-in-out-quad" delay="300"  title="Contact"></TitleWrapper>
-          <DivLayout>
+          easing="ease-in-out-quad" delay="300" title="Contact"></TitleWrapper>
+        <DivLayout>
           <DivContact ref={ref4}>
-            
+
             <TextWrapper data="fade-right"
 
-              easing="ease-in-out-quad" delay="600" font="zilla"  size><HighLightWrapper>Let's work together !</HighLightWrapper> </TextWrapper>
-              <hr style={{visibility:"hidden"}}></hr>
-              
-              <TextWrapper data="fade-right"
+              easing="ease-in-out-quad" delay="600" font="zilla" size><HighLightWrapper>Let's work together !</HighLightWrapper> </TextWrapper>
+            <hr style={{ visibility: "hidden" }}></hr>
 
-easing="ease-in-out-quad" delay="7c00" font="zilla">I am open to any job opportunity that would match my profile and set of skills.</TextWrapper>
+            <TextWrapper data="fade-right"
+
+              easing="ease-in-out-quad" delay="7c00" font="zilla">I am open to any job opportunity that would match my profile and set of skills.</TextWrapper>
             <Divider></Divider>
             <TextWrapper data="fade-right"
 
               easing="ease-in-out-quad" delay="900" font="zilla" >Email : benhammadcamille@hotmail.fr</TextWrapper>
           </DivContact>
           <ContactForm data="fade-down-left" duration="2000" easing="ease-in-out-cubic"></ContactForm>
-          </DivLayout>
-        </Layout>
-        <Footer></Footer>
-   
+        </DivLayout>
+      </Layout>
+      <Footer></Footer>
+
 
     </React.Fragment>
 

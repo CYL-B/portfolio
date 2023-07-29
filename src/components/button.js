@@ -77,7 +77,8 @@ justify-content : center;
 `
 
 export const Button = (props) => {
-const{onClick} = props;
+
+const{onClick, ariaLabel} = props;
 
 
 var onClik
@@ -88,6 +89,6 @@ if(props.onClick){
 
 
     return(
-        <Layer><CustomButton type={props.type} disabled={props.disabled } size={props.taille} onClick={onClik}>{props.children}</CustomButton></Layer>
+        <Layer><CustomButton type={props.type} disabled={props.disabled } size={props.taille} onClick={onClik} aria-label={ariaLabel} role="button">{props.children}</CustomButton></Layer>
     )
 }
