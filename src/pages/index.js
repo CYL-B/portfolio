@@ -529,5 +529,9 @@ const IndexPage = () => {
 export default IndexPage
 
 export const Head = () => (
+  <>
+   <html lang="en" />
   <SEO />
+  <title>Camille Web developer</title>
+  </>
 )
