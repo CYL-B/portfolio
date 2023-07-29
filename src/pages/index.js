@@ -433,7 +433,10 @@ const IndexPage = () => {
               data="fade-right"
               delay="500"
               duration="1000"
-              youtube
+              youtube 
+              arial4="External link to youtube video presenting Kiosk"
+              arial="External link to youtube video presenting Kiosk"
+              arial2="Link to Kiosk github repository"
               href="https://youtu.be/Fx4hOgKBU04"
               href2="https://github.com/CYL-B/Kiosk-front"
               source={Kiosk}
@@ -444,7 +447,10 @@ const IndexPage = () => {
 
             <Card
               href4="https://calm-dawn-80536.herokuapp.com/"
-              link
+              link 
+              arial2="Link to Droits Communs github repository"
+              arial3="External link to Droits Communs app"
+              arial4="External link to Droits Communs app"
               href3="https://calm-dawn-80536.herokuapp.com/"
               title="Droit(s) Communs"
               source={Droits}

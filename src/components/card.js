@@ -432,8 +432,6 @@ export const Card = (props) => {
                 <Content>{props.children}</Content>
                 <div><Divider></Divider>
                     <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", margin: "0px 10px 0px 10px" }}>
-
-
                         <div><Content display margin={props.margin}>{props.techno}</Content> </div>
                         {props.youtube ? <a aria-label={props.arial} href={props.href} rel="noreferrer" target="_blank" ><IconStyleWrapper><YoutubeIcon aria-hidden="true"></YoutubeIcon></IconStyleWrapper></a> : null}
                         {props.link ? <a aria-label={props.arial3} href={props.href3} rel="noreferrer" target="_blank" ><IconStyleWrapper><LinkAltIcon aria-hidden="true"></LinkAltIcon></IconStyleWrapper></a> : null}
