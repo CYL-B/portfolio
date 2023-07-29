@@ -115,7 +115,7 @@ const SlideMenu = (props) => {
   useOnClickOutside(node, () => setOpen(false));
   return (
     <div ref={node}>
-      <StyledBurger open={open} setOpen={setOpen} onClick={() => setOpen(!open)}>
+      <StyledBurger open={open} setOpen={setOpen} onClick={() => setOpen(!open)} aria-label='Open/Close menu'>
         <div />
         <div />
         <div />

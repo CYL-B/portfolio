@@ -326,6 +326,8 @@ padding: 10px;
 const IndexPage = () => {
 
   useEffect(() => {
+    document.title = 'Camille Web Developer';
+
     const animate = () => {
       AOS.init({
         // Global settings:
@@ -532,6 +534,5 @@ export const Head = () => (
   <>
    <html lang="en" />
   <SEO />
-  <title>Camille Web developer</title>
   </>
 )

@@ -292,7 +292,7 @@ const ContactForm = (props) => {
        ) : null}  */}
             <ErrorMessage name="email"></ErrorMessage>
             <Label htmlFor="message">Message</Label>
-            <Field as={TextArea} name="message" id="messqge"></Field>
+            <Field as={TextArea} name="message" id="message"></Field>
             {/* {touched.message && errors.message ? (
          <div>{errors.message}</div>
        ) : null} */}
