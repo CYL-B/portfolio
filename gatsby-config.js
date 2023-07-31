@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: `Camille Fullstack Developer`,
     description: `Hi ! I'm Camille, I'm a web developer and this is where I showcase what I can do.`,
-    siteUrl: `https://camillefullstackdeveloper.gatsbyjs.io`
+    siteUrl: `https://www.camillebenhammadiportfolio.com/`
   },
   plugins: ["gatsby-plugin-styled-components",
     "gatsby-plugin-image",
