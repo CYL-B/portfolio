@@ -15,7 +15,9 @@ box-shadow: 5px -5px 10px 0px rgba(0, 0, 0, 0.21), -5px 5px 10px 0px rgba(0, 0, 
 box-sizing: border-box;
 display: flex;
 height: 280px;
-margin: 20px;  
+
+margin-left: auto;  
+margin-right: auto;  
 padding: 20px;
 position: relative;
 width: 335px;   
@@ -227,7 +229,7 @@ export const CardBowie = (props) => {
      console.log(socialArray, "social2");
 
     return (
-        
+       
         <CardContainer>
             <RotatingDot/>
 
@@ -249,5 +251,6 @@ export const CardBowie = (props) => {
                 </CardBottomContent>
             </CardContentWrapper>
         </CardContainer>
+      
     )
 }

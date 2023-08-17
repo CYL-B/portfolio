@@ -23,6 +23,10 @@ import Footer from "../components/organisms/footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+//Carousel
+import SimpleSlider from "../components/third-party/carousel";
+
+
 //Icons
 import { Github, Youtube, Linkedin } from '@styled-icons/boxicons-logos';
 
@@ -261,43 +265,6 @@ display: flex;
 const DivPortfolio2 = styled.div`
 padding: 10px;
  width: 100vw; 
- display:flex;
- flex-direction: column;
-
- @media${devices.mobileS}{
-
-  align-self: center     
-};
-@media${devices.mobileM}{
-  
-  align-self: center
-};
-
-@media${devices.mobileL}{
-  
-  align-self: center 
-};
-
-@media${devices.tablet}{
- 
-  align-self: center
-};
-
-@media${devices.laptop}{
-  
-  align-self: center;
-  flex-direction: row;
-};
-
-@media${devices.laptopL}{
-  
-  align-self: start;  
-  flex-direction: row; 
-};
-@media${devices.desktop}{
-  align-self: start;  
-  flex-direction: row;
-}
 `
 const IndexPage = (props) => {
 
@@ -412,39 +379,11 @@ const IndexPage = (props) => {
 
             easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
           <DivPortfolio2>
+            <SimpleSlider>
+
           {cardsToDisplay}
+          </SimpleSlider>
 
-            {/* <Card href4="https://youtu.be/Fx4hOgKBU04"
-              data="fade-right"
-              delay="500"
-              duration="1000"
-              youtube 
-              arial4="External link to youtube video presenting Kiosk"
-              arial="External link to youtube video presenting Kiosk"
-              arial2="Link to Kiosk github repository"
-              href="https://youtu.be/Fx4hOgKBU04"
-              href2="https://github.com/CYL-B/Kiosk-front"
-              source={Kiosk}
-              title="KIOSK"
-              techno="#ReactNative #ReactnativeElements #MongoDB#NodeJs" margin
-              alt="Kiosk welcome page">KIOSK is a marketplace for professionals looking for ethical and eco-friendly services and products for their business.<br></br>
-              This is my coding bootcamp final project. I worked with a team of 3 people to turn it into a mobile application in 2 weeks. KIOSK was built with React Native.</Card>
-
-            <Card
-              href4="https://calm-dawn-80536.herokuapp.com/"
-              link 
-              arial2="Link to Droits Communs github repository"
-              arial3="External link to Droits Communs app"
-              arial4="External link to Droits Communs app"
-              href3="https://calm-dawn-80536.herokuapp.com/"
-              title="Droit(s) Communs"
-              source={Droits}
-              href2="https://github.com/CYL-B/droits-communs.git"
-              techno="#React #MUI #MongoDB #Nodejs #mailchimp #Leaflet" margin
-              alt="Droits Commun(s) welcome page">Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
-
-              I'm still working on it but you can check it out !
-            </Card> */}
           </DivPortfolio2>
       </Layout>
 
