@@ -5,7 +5,7 @@ import { Figma, VisualStudio, Nodejs, Adobe, ReactLogo, Javascript, Css3, Html5,
 import {Plus} from "@styled-icons/boxicons-regular";
 import {Mongodb, Expo, Heroku, Miro, Styledcomponents, Gatsby} from'@styled-icons/simple-icons'
 import {StyledIconBase} from '@styled-icons/styled-icon'
-import {TextWrapper} from './text'
+import {TextWrapper} from '../atoms/text'
 
 const UnorderedList = styled.ul`
 list-style:none;
@@ -38,7 +38,7 @@ const IconStyleWrapper = styled.div`
 
 
   var tableau = [[{type: <Figma></Figma>,
-  name:"Figma"}, {type:<Miro></Miro>, name:"Miro"}, {type: <Adobe></Adobe>, name:"Photoshop"}, {type : <VisualStudio></VisualStudio>, name:"Visualstudio"}, {type:<Git></Git>, name:"Git & Github"},{type:<Plus></Plus>, name:"Agile & SCRUM"} ],  [{type: <Nodejs></Nodejs>, name:"Express/Nodejs"}, {type:<Mongodb></Mongodb>, name:"Mongodb"},{type:<Heroku></Heroku>, name:"Heroku"}, {type:<Expo></Expo>, name:"Expo"}], [{type : <Javascript></Javascript>, name:"Javascript"}, {type: <Css3></Css3>, name:"CSS"}, {type : <Html5></Html5>, name:"HTML"}, {type: <ReactLogo></ReactLogo>, name:"React/ReactNative"}, {type: <Redux></Redux>, name:"Redux"}, {type:<Bootstrap></Bootstrap>, name:"Bootstrap"}, {type:<Styledcomponents></Styledcomponents>, name:"Styled-components"}, {type:<Gatsby></Gatsby>, name:"Gatsby"}]];
+  name:"Figma"}, {type:<Miro></Miro>, name:"Miro"}, {type: <Adobe></Adobe>, name:"Photoshop"}, {type : <VisualStudio></VisualStudio>, name:"Visualstudio"}, {type:<Git></Git>, name:"Git & Github"},{type:<Plus></Plus>, name:"Agile"} ],  [{type: <Nodejs></Nodejs>, name:"Express/Nodejs"}, {type:<Mongodb></Mongodb>, name:"Mongodb"},{type:<Heroku></Heroku>, name:"Heroku"}, {type:<Expo></Expo>, name:"Expo"}], [{type : <Javascript></Javascript>, name:"Javascript"}, {type: <Css3></Css3>, name:"CSS"}, {type : <Html5></Html5>, name:"HTML"}, {type: <ReactLogo></ReactLogo>, name:"React/ReactNative"}, {type: <Redux></Redux>, name:"Redux"}, {type:<Bootstrap></Bootstrap>, name:"Bootstrap"}, {type:<Styledcomponents></Styledcomponents>, name:"Styled-components"}, {type:<Gatsby></Gatsby>, name:"Gatsby"}]];
 
   
     

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import "@fontsource/zilla-slab";
-import {TextWrapper} from './text'
+import {TextWrapper} from '../atoms/text'
 
 const Wrapper = styled.div`
 width:100%;

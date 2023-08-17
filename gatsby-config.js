@@ -23,8 +23,26 @@ module.exports = {
         color: `#F4ECE4`,
         showSpinner: true,
       },
+    },
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: { 
+        dbName: `Portfolio`, 
+      auth: {
+        user: 'Camdev',
+        password: 'E16Rrx0HRym5TVCY'
+    }, 
+    collection: `Projects`, 
+    server: {
+        address: 'cluster0-shard-00-01.d5pln.mongodb.net',
+        port: 27017
+    },
+    extraParams:{
+      replicaSet: 'cluster0-shard-01',
+            ssl: true,
+            authSource: 'admin',
+            retryWrites: true
+    } },
     }
-    
-
   ]
 };

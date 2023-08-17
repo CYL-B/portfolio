@@ -1,38 +1,40 @@
 import React, { useRef, useEffect } from "react";
+import { graphql } from 'gatsby';
+
 //custom components
-import Layout from "../components/layout";
-import { TitleWrapper, Subtitle, TextWrapper } from "../components/text";
-import SlideMenu from "../components/menu2";
-import { Button } from "../components/button";
+import Layout from "../components/utils/layout";
+import { TitleWrapper, Subtitle, TextWrapper } from "../components/atoms/text";
+import SlideMenu from "../components/molecules/menu/menu2";
+import { Button } from "../components/atoms/button";
 
 
-import ContactForm from "../components/contact";
-import { Avatar } from "../components/avatar";
-import { Card } from "../components/card";
+import ContactForm from "../components/molecules/contact";
+import { Avatar } from "../components/atoms/avatar";
+import { Card } from "../components/cards/card";
+import { CardBowie } from "../components/cards/cardBowie";
 
-import { Design, Frontend, Backend } from "../components/list";
+import { Design, Frontend, Backend } from "../components/molecules/list";
 
-import HighLightWrapper from "../components/highlight";
+import HighLightWrapper from "../components/atoms/highlight";
 
-import Footer from "../components/footer";
-
-import { Linkedin, Github } from '@styled-icons/boxicons-logos';
-import Kiosk from '../images/welcome.png';
-import Droits from "../images/Droits communs.png";
+import Footer from "../components/organisms/footer";
 
 //animation
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Arrow from '../components/animated/down.gif'
+
+//Icons
+import { Github, Youtube, Linkedin } from '@styled-icons/boxicons-logos';
+
 
 //Librairies pour le style
 import styled from "styled-components";
 
 //responsive
-import { devices } from "../components/responsive";
+import { devices } from "../components/utils/responsive";
 
 //SEO
-import { SEO } from "../components/seo";
+import { SEO } from "../components/utils/seo";
 
 
 const Divider = styled.hr`
@@ -252,44 +254,15 @@ display: flex;
 `
 const DivPortfolio = styled.div`
 display: flex;
+ `
 
- @media(max-width: 320px){
-  flex-direction:column 
-
-};
-@media(max-width: 375px){
-  flex-direction:column 
-};
-
-@media(max-width: 425px){
-  flex-direction:column
-};
-
-@media(max-width:768px){
-  flex-direction:column
-};
-
-@media(max-width:1024px){
-  flex-direction:column;
-}
-
-@media(max-width:1440px){
-align-items: center;
- width: 100%;
- height: 100%;
-}
-
-@media(max-width:2560px){
-align-items: center;
- width: 100%;
- height: 100%;
-} `
+ 
 
 const DivPortfolio2 = styled.div`
 padding: 10px;
- min-width: 55vw; 
- max-height: 70vh; 
- overflow-y: auto;
+ width: 100vw; 
+ display:flex;
+ flex-direction: column;
 
  @media${devices.mobileS}{
 
@@ -312,18 +285,31 @@ padding: 10px;
 
 @media${devices.laptop}{
   
-  align-self: center
+  align-self: center;
+  flex-direction: row;
 };
 
 @media${devices.laptopL}{
   
-  align-self: start;   
+  align-self: start;  
+  flex-direction: row; 
 };
 @media${devices.desktop}{
   align-self: start;  
+  flex-direction: row;
 }
 `
-const IndexPage = () => {
+const IndexPage = (props) => {
+
+  const projects = props.data.allMongodbPortfolioProjects.edges;
+
+  const cardsToDisplay = projects.map(project => <CardBowie imageContent={project.node.img}
+    imageAlt={project.node.alt}
+    textContent={project.node.desc}
+    title={project.node.name} socialInformation={project.node.socials}
+    imageLink={project.node.url}>
+
+  </CardBowie>)
 
   useEffect(() => {
     document.title = 'Camille Web Developer';
@@ -371,7 +357,6 @@ const IndexPage = () => {
 
   return (
     <React.Fragment>
-
       <Layout id="layout1" layout={{
         width: "100vw", height: "100vh", margin: "0px 0px 5% 0px"
       }}>
@@ -422,16 +407,14 @@ const IndexPage = () => {
         <TitleWrapper font="Over" data="fade-right"
 
           easing="ease-in-out-quad" delay="300" >Portfolio</TitleWrapper>
-        <div style={{ display: "flex", justifyContent: "flex-end", padding: "0px 20px 0px 0px" }}><img src={Arrow} alt="Down Arrow" /></div>
-        <DivPortfolio>
 
           <div style={{ padding: "0px 0px 0px 50px" }}><TextWrapper margin data="fade-right"
 
             easing="ease-in-out-quad" delay="600" font="zilla" size >Here are some projects that I have worked on or have been working on as a fullstack developer.</TextWrapper></div>
-
           <DivPortfolio2>
+          {cardsToDisplay}
 
-            <Card href4="https://youtu.be/Fx4hOgKBU04"
+            {/* <Card href4="https://youtu.be/Fx4hOgKBU04"
               data="fade-right"
               delay="500"
               duration="1000"
@@ -461,9 +444,8 @@ const IndexPage = () => {
               alt="Droits Commun(s) welcome page">Droit(s) commun(s) is a personal project that I designed and am currently developing which aims to promote legal design. My goal was to create a media to make law accessible to people with no academic background in that field.
 
               I'm still working on it but you can check it out !
-            </Card>
+            </Card> */}
           </DivPortfolio2>
-        </DivPortfolio>
       </Layout>
 
       <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px" }}>
@@ -528,7 +510,7 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const Head = () => (
   <>
@@ -536,3 +518,23 @@ export const Head = () => (
   <SEO />
   </>
 )
+
+export const pageQuery = graphql`
+query {
+  allMongodbPortfolioProjects {
+     edges {
+      node {
+        name
+        alt
+        url
+        desc
+        img
+        socials{
+          name
+          url
+          alt
+        } 
+      }
+    }
+  }
+}`

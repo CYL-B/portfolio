@@ -4,7 +4,7 @@ import "@fontsource/zilla-slab";
 import { Github, Youtube } from '@styled-icons/boxicons-logos';
 import { StyledIconBase } from '@styled-icons/styled-icon';
 import {LinkAlt} from "@styled-icons/boxicons-regular"
-import { devices } from './responsive';
+import { devices } from '../utils/responsive';
 
 
 const Container = styled.div`

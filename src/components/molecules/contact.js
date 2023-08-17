@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "@fontsource/zilla-slab";
 import { Field, Formik, ErrorMessage, Form } from 'formik';
 import axios from "axios";
-import { devices } from "./responsive";
+import { devices } from "../utils/responsive";
 
 // Formulaire contact
 const Input = styled(Field)`

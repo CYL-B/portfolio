@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "@fontsource/zilla-slab";
-import { devices } from "./responsive";
+import { devices } from "../utils/responsive";
 
 
 const CustomButton = styled.button`

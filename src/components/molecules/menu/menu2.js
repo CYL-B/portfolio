@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React, { useState, useRef } from 'react';
-import { useOnClickOutside } from "../hooks/clickOutside";
+import { useOnClickOutside } from "../../../hooks/clickOutside";
 import "@fontsource/zilla-slab";
 import { BookOpen, Laptop, MailSend, ArrowToRight} from '@styled-icons/boxicons-regular';
 

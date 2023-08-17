@@ -2,7 +2,7 @@ import styled from "styled-components"
 import * as React from "react"
 import "@fontsource/zilla-slab";
 import "@fontsource/over-the-rainbow";
-import { devices } from "./responsive";
+import { devices } from "../utils/responsive";
 
 const Title = styled.p`
 color: #F6CD8B;
