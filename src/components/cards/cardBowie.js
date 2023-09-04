@@ -15,7 +15,8 @@ box-shadow: 5px -5px 10px 0px rgba(0, 0, 0, 0.21), -5px 5px 10px 0px rgba(0, 0, 
 box-sizing: border-box;
 display: flex;
 height: 280px;
-
+margin-top:10px;
+margin-bottom:10px;
 margin-left: auto;  
 margin-right: auto;  
 padding: 20px;

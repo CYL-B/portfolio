@@ -263,7 +263,8 @@ display: flex;
  
 
 const DivPortfolio2 = styled.div`
-padding: 10px;
+padding-bottom: 10px;
+padding-top: 10px;
  width: 100vw; 
 `
 const IndexPage = (props) => {
