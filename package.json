@@ -22,6 +22,7 @@
     "gatsby": "^5.0.0",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-nprogress": "^5.10.0-next.2",
+    "gatsby-plugin-remote-images": "^3.6.6",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",

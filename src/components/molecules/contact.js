@@ -122,13 +122,13 @@ padding:10px;
 const ButtonBase = styled.button`
     border-radius: 20px;
     cursor: pointer;
-    background : transparent;
+    background-color: #F6CD8B;
     font-family: Zilla Slab;
     color: #FFFEF2;
     text-align:center;
     font-size :32px;
     &:hover {
-        background-color: #F6CD8B
+        background: transparent
     
         ;
       }

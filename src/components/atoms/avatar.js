@@ -1,13 +1,44 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React from 'react';
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
+import { useStaticQuery, graphql } from 'gatsby';
+import React from "react";
+import { devices } from "../../components/utils/responsive";
+
+const AvatarImg = styled.img`
+border-radius: 50%;
+box-shadow: 0px 4px 4px 0px #F6CD8B, -4px 4px 4px 0px #F6CD8B;
+height: 250px;
+object-fit: cover;
+object-position: top;
+width: 250px;
+
+@media${devices.tablet}{
+  height: 450px;
+  width: 450px;
+        },
+`
 
 
+export function Avatar(props) {
+    const data = useStaticQuery(graphql`
+    query Avatar {
+      allMongodbPortfolioProfile {
+        edges {
+          node {
+            id
+            url
+          }
+        }
+      }
+    }
+  `)
 
+  const profile = data.allMongodbPortfolioProfile.edges[0].node.url;
 
-export function Avatar() {
-    return  <StaticImage  alt="Avatar" src="../images/avatar.jpeg" placeholder="blurred" width={450} height={450} imgStyle={{borderRadius:"50%"}}
-    style={{borderRadius:"50%", boxShadow:"0px 4px 4px 0px #F6CD8B, -4px 4px 4px 0px #F6CD8B"
-}}/>
-  
+  return (
+    <AvatarImg
+      alt="Avatar"
+      src={profile}
+    />
+  );
 }
- 

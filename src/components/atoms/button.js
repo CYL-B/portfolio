@@ -14,8 +14,7 @@ color: #FFFEF2;
 text-align:center;
 
 &:hover {
-    background-color: #F6CD8B
-
+    background : #F6CD8B;
     ;
   }
 &:disabled{
