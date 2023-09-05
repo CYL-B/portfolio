@@ -50,9 +50,17 @@ export default class SimpleSlider extends Component {
         slidesToScroll: 1,
         responsive: [
             {
-              breakpoint: 425,
+              breakpoint: 1024,
               settings: {
-               arrows:false,
+               arrows:true,
+                slidesToShow: 1,
+
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+               arrows: false,
                 slidesToShow: 1,
 
               }
