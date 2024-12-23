@@ -30,6 +30,7 @@ const CustomSlider = styled(Slider)`
 
 .slick-prev {
   left: 5px;
+  z-index: 666
 }
 
 .slick-next {
@@ -68,9 +69,11 @@ export default class SimpleSlider extends Component {
         ]
       };
       return (
+        <div class="slider-container">
           <CustomSlider {...settings}>
             {this.props.children}
           </CustomSlider>
+          </div>
       );
     }
   }

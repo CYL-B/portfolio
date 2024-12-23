@@ -33,6 +33,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+         icon: `src/images/icon.png`,
+         cache_busting_mode: `none`
+      }
+    },
+    {
       resolve: `gatsby-source-mongodb`,
       options: { 
         dbName: `Portfolio`, 
