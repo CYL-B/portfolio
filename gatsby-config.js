@@ -4,18 +4,27 @@ module.exports = {
   siteMetadata: {
     title: `Camille Fullstack Developer`,
     description: `Hi ! I'm Camille, I'm a web developer and this is where I showcase what I can do.`,
-    siteUrl: `https://www.camillebenhammadiportfolio.com/`
+    siteUrl: `https://www.camillebenhammadiportfolio.com/`,
+    image: `https://imagizer.imageshack.com/img924/7010/r63NBo.jpg`
   },
   plugins: ["gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-netlify",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-webpack-bundle-analyser-v2",
+    `gatsby-plugin-minify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
       },
     },
     {
