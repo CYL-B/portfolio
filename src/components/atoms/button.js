@@ -88,6 +88,6 @@ if(props.onClick){
 
 
     return(
-        <Layer><CustomButton type={props.type} disabled={props.disabled } size={props.taille} onClick={onClik} aria-label={ariaLabel} role="button">{props.children}</CustomButton></Layer>
+        <CustomButton type={props.type} disabled={props.disabled } size={props.taille} onClick={onClik} aria-label={ariaLabel} role="button">{props.children}</CustomButton>
     )
 }
