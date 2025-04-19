@@ -18,6 +18,7 @@ import HighLightWrapper from "../components/atoms/highlight";
 
 import Footer from "../components/organisms/footer";
 
+import { PortfolioContainer } from "../components/organisms/portfolio-section/portfolioContainer";
 //animation
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -133,7 +134,7 @@ const DivContact = styled.div`
 
 const DivAbout = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
 
   @media (max-width: 320px) {
     flex-direction: column;
@@ -241,7 +242,8 @@ const DivPortfolio = styled.div`
 const DivPortfolio2 = styled.div`
   padding-bottom: 10px;
   padding-top: 10px;
-  width: 100vw;
+  width: 100%;
+  display:flex;
 `;
 const IndexPage = (props) => {
   const projects = props.data.allMongodbPortfolioProjects.edges;
@@ -302,8 +304,7 @@ const IndexPage = (props) => {
       <Layout
         id="layout1"
         layout={{
-          width: "100vw",
-          height: "100vh",
+          width: "100%",
           margin: "0px 0px 5% 0px",
         }}
       >
@@ -372,7 +373,7 @@ const IndexPage = (props) => {
         </a>
       </Layout>
 
-      <Layout id="layout2" layout={{ margin: "0px 0px 5% 0px" }}>
+      <Layout id="layout2" layout={{ margin: "0px 0px 5% 0px",width: "100%" }}>
         <div ref={ref1}></div>
         <TitleWrapper
           data="fade-right"
@@ -448,7 +449,7 @@ const IndexPage = (props) => {
           </DivAbout2>
         </DivAbout>
       </Layout>
-      <Layout id="layout3" layout={{ margin: "0px 0px 5% 0px" }}>
+      <Layout id="layout3" layout={{ margin: "0px 0px 5% 0px", width: "100%" }}>
         <div ref={ref2}></div>
         <TitleWrapper
           font="Over"
@@ -473,11 +474,12 @@ const IndexPage = (props) => {
           </TextWrapper>
         </div>
         <DivPortfolio2>
-          <SimpleSlider>{cardsToDisplay}</SimpleSlider>
+          {/* <SimpleSlider>{cardsToDisplay}</SimpleSlider> */}
+<PortfolioContainer></PortfolioContainer>
         </DivPortfolio2>
       </Layout>
 
-      <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px" }}>
+      <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px", width: "100%"  }}>
         <div ref={ref3}></div>
         <TitleWrapper
           font="Over"
@@ -531,7 +533,7 @@ const IndexPage = (props) => {
         </DivTechno>
       </Layout>
 
-      <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px" }}>
+      <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px", width: "100%" }}>
         <TitleWrapper
           font="Over"
           data="fade-right"
