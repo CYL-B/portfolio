@@ -37,7 +37,10 @@ import { devices } from "../components/utils/responsive";
 
 //SEO
 import { SEO } from "../components/utils/seo";
-
+const Container = styled.div`
+  width: 100vw;
+  box-sizing: border-box;
+`;
 const Divider = styled.hr`
   border: ${(props) => (props.border ? "0px" : "1px solid")};
   margin: ${(props) => (props.margin ? "20px 20px" : "25px 25px")};
@@ -235,15 +238,14 @@ const DivTechno = styled.div`
     justify-content: space-evenly;
   }
 `;
-const DivPortfolio = styled.div`
-  display: flex;
-`;
 
 const DivPortfolio2 = styled.div`
   padding-bottom: 10px;
   padding-top: 10px;
   width: 100%;
-  display:flex;
+  display: flex;
+  justify-content: center;
+
 `;
 const IndexPage = (props) => {
   const projects = props.data.allMongodbPortfolioProjects.edges;
@@ -300,7 +302,7 @@ const IndexPage = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <Container>
       <Layout
         id="layout1"
         layout={{
@@ -373,7 +375,7 @@ const IndexPage = (props) => {
         </a>
       </Layout>
 
-      <Layout id="layout2" layout={{ margin: "0px 0px 5% 0px",width: "100%" }}>
+      <Layout id="layout2" layout={{ margin: "0px 0px 5% 0px", width: "100%" }}>
         <div ref={ref1}></div>
         <TitleWrapper
           data="fade-right"
@@ -475,11 +477,11 @@ const IndexPage = (props) => {
         </div>
         <DivPortfolio2>
           {/* <SimpleSlider>{cardsToDisplay}</SimpleSlider> */}
-<PortfolioContainer></PortfolioContainer>
+          <PortfolioContainer></PortfolioContainer>
         </DivPortfolio2>
       </Layout>
 
-      <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px", width: "100%"  }}>
+      <Layout id="layout4" layout={{ margin: "0px 0px 5% 0px", width: "100%" }}>
         <div ref={ref3}></div>
         <TitleWrapper
           font="Over"
@@ -533,7 +535,10 @@ const IndexPage = (props) => {
         </DivTechno>
       </Layout>
 
-      <Layout id="layout5" layout={{ margin: "10px 0px 10px 0px", width: "100%" }}>
+      <Layout
+        id="layout5"
+        layout={{ margin: "10px 0px 10px 0px", width: "100%" }}
+      >
         <TitleWrapper
           font="Over"
           data="fade-right"
@@ -581,7 +586,7 @@ const IndexPage = (props) => {
         </DivLayout>
       </Layout>
       <Footer></Footer>
-    </React.Fragment>
+    </Container>
   );
 };
 
