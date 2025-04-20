@@ -12,7 +12,6 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-netlify",
     "gatsby-transformer-sharp",
-    "gatsby-plugin-webpack-bundle-analyser-v2",
     `gatsby-plugin-minify`,
     {
       resolve: `gatsby-source-filesystem`,
