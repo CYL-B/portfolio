@@ -12,6 +12,7 @@ background : transparent;
 font-family: Zilla Slab;
 color: #FFFEF2;
 text-align:center;
+transition: all 0.3s ease-in-out;
 
 &:hover {
     background : #F6CD8B;
