@@ -20,12 +20,7 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        devMode: true,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
