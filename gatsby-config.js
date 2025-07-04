@@ -8,12 +8,20 @@ module.exports = {
     image: `https://imagizer.imageshack.com/img924/7010/r63NBo.jpg`,
   },
   plugins: [
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-netlify",
     "gatsby-transformer-sharp",
     `gatsby-plugin-minify`,
+    {
+  resolve: "gatsby-plugin-styled-components",
+  options: {
+    displayName: true,
+    fileName: false,
+    pure: true,
+    ssr: true,
+  },
+},
     {
       resolve: `gatsby-source-filesystem`,
       options: {

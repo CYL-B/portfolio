@@ -191,42 +191,7 @@ const ContactButton = (props) => {
 
 const ContactForm = (props) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  // const [serverState, setServerState] = useState({
-  //   submitting: false,
-  //   status: null
-  // });
-  // const handleServerResponse = (ok, msg, form) => {
-  //   setServerState({
-  //     submitting: false,
-  //     status: { ok, msg }
-  //   });
-  //   if (ok) {
-  //     form.reset();
-  //   }
-  // };
-  // const handleOnSubmit = (values) => {
-  //   // e.preventDefault();
-
-  //   const form = values;
-
-  //   axios({
-  //     method: "post",
-  //     url: "https://getform.io/f/2987863d-1799-4003-a9af-015b367fa510",
-  //     data: form
-
-  //   })
-
-  //   setIsSubmitted(true);
-  //   form.reset()
-  //   // .then(r => {
-  //   //   handleServerResponse(true, "Thanks!", form);
-  //   // })
-  //   // .catch(r => {
-  //   //   handleServerResponse(false, r.response.data.error, form);
-  //   // })
-  // };
-  // function sleep(ms) {
-  //   return new Promise(resolve => setTimeout(resolve, ms));
+  
   const handleOnSubmit = async (values) => {
     if (typeof window !== "undefined") {
       try {
