@@ -40,7 +40,6 @@
     "redux": "^4.2.0",
     "simple-icons": "^6.22.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5",
-    "styled-icons": "^10.45.0"
+    "styled-components": "^5.3.5"
   }
 }
