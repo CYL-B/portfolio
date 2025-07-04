@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import React, { useState, useRef } from 'react';
 import { useOnClickOutside } from "../../../hooks/clickOutside";
 import "@fontsource/zilla-slab";
-import { BookOpen, Laptop, MailSend, ArrowToRight} from '@styled-icons/boxicons-regular';
+import { BiBookOpen, BiLaptop, BiMailSend, BiArrowToRight } from "react-icons/bi";
+import { IconContext } from "react-icons";
 
 
 const StyledBurger = styled.button`
@@ -114,6 +115,8 @@ const SlideMenu = (props) => {
   
   useOnClickOutside(node, () => setOpen(false));
   return (
+            <IconContext.Provider value={{  className: "menu_icon" }}>
+    
     <div ref={node}>
       <StyledBurger open={open} setOpen={setOpen} onClick={() => setOpen(!open)} aria-label='Open/Close menu'>
         <div />
@@ -123,21 +126,22 @@ const SlideMenu = (props) => {
       <StyledMenu  open={open} setOpen={setOpen}>
         
           <button setOpen={setOpen} onClick={()=> {setOpen(!open);handleClick1()}}><span role="img" aria-label="about us"></span>
-          <ArrowToRight style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>About me</button>
+          <BiArrowToRight/>About me</button>
         
       
           <button onClick={()=> {setOpen(!open);handleClick2()}}><span role="img" aria-label="price"></span>
-          <BookOpen style={{height:"2rem", padding:"0px 10px 0px 10px"}}></BookOpen>Portfolio</button>
+          <BiBookOpen></BiBookOpen>Portfolio</button>
         
      
           <button onClick={()=> {setOpen(!open); handleClick3()}}><span role="img" aria-label="contact"></span>
-          <Laptop style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>Technologies</button>
+          <BiLaptop />Technologies</button>
         
           <button onClick={()=> {setOpen(!open); handleClick4()}}><span role="img" aria-label="contact"></span>
-          <MailSend style={{height:"2rem", padding:"0px 10px 0px 10px"}}/>Contact</button>
+          <BiMailSend/>Contact</button>
         
       </StyledMenu>
     </div>
+    </IconContext.Provider>
   )
 }
 export default SlideMenu

@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import "@fontsource/zilla-slab";
-import { SiCss3, SiJavascript, SiHtml5, SiTailwindcss, SiGit, SiVscodium, SiNodedotjs, SiAdobephotoshop, SiReact, SiRedux, SiBootstrap, SiSass, SiMongodb, SiExpo, SiHeroku, SiMiro,  SiGatsby, SiPostman, SiNpm, SiFigma} from "react-icons/si";
+import { SiCss3, SiJavascript, SiHtml5, SiTailwindcss, SiGit, SiVscodium, SiNodedotjs, SiReact, SiRedux, SiSass, SiMongodb, SiExpo, SiHeroku, SiMiro,  SiGatsby, SiPostman, SiNpm, SiFigma} from "react-icons/si";
 import { IconContext } from "react-icons";
 
 import { TextWrapper } from "../atoms/text";
@@ -21,56 +21,58 @@ const List = styled.li`
 `;
 ;
 
-var tableau = [
+const tableau = [
   [
-    { type: <SiNpm ></SiNpm>, name: "SiNpm" },
-    { type: <SiFigma></SiFigma>, name: "Figma" },
-    { type: <SiMiro></SiMiro>, name: "Miro" },
-    { type: <SiVscodium></SiVscodium>, name: "Visualstudio" },
-    { type: <SiGit></SiGit>, name: "Git & Github" },
-    { type: <SiPostman></SiPostman>, name: "Postman" },
-   
+    { icon: SiNpm, name: "SiNpm" },
+    { icon: SiFigma, name: "Figma" },
+    { icon: SiMiro, name: "Miro" },
+    { icon: SiVscodium, name: "Visualstudio" },
+    { icon: SiGit, name: "Git & Github" },
+    { icon: SiPostman, name: "Postman" },
   ],
   [
-    { type: <SiNodedotjs className="icon"></SiNodedotjs>, name: "Express/Nodejs" },
-    { type: <SiMongodb></SiMongodb>, name: "Mongodb" },
-    { type: <SiHeroku></SiHeroku>, name: "Heroku" },
-    { type: <SiExpo></SiExpo>, name: "Expo" },
+    { icon: SiNodedotjs, name: "Express/Nodejs" },
+    { icon: SiMongodb, name: "Mongodb" },
+    { icon: SiHeroku, name: "Heroku" },
+    { icon: SiExpo, name: "Expo" },
   ],
   [
-    { type: <SiJavascript></SiJavascript>, name: "Javascript" },
-    { type: <SiCss3></SiCss3>, name: "CSS" },
-    { type: <SiSass></SiSass>, name: "SASS" },
-    { type: <SiHtml5></SiHtml5>, name: "HTML" },
-    { type: <SiTailwindcss></SiTailwindcss>, name: "Tailwind" },
-    { type: <SiReact></SiReact>, name: "React/ReactNative" },
-    { type: <SiRedux></SiRedux>, name: "Redux" },
-    { type: <SiGatsby></SiGatsby>, name: "Gatsby" },
+    { icon: SiJavascript, name: "Javascript" },
+    { icon: SiCss3, name: "CSS" },
+    { icon: SiSass, name: "SASS" },
+    { icon: SiHtml5, name: "HTML" },
+    { icon: SiTailwindcss, name: "Tailwind" },
+    { icon: SiReact, name: "React/ReactNative" },
+    { icon: SiRedux, name: "Redux" },
+    { icon: SiGatsby, name: "Gatsby" },
   ],
 ];
 
 var design = tableau[0].map((element, i) => {
+  const Icon = element.icon;
   return (
     <List key={i}>
-      {element.type}
+     <Icon/>
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );
 });
 
 var backend = tableau[1].map((element, i) => {
+  const Icon = element.icon;
   return (
     <List key={i}>
-      {element.type}
+      <Icon/>
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );
 });
 
 var frontend = tableau[2].map((element, i) => {
+  const Icon = element.icon;
   return (
     <List key={i}>
-      {element.type}
+      <Icon/>
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );

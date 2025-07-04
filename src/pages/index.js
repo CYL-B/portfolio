@@ -11,8 +11,8 @@ import { Button } from "../components/atoms/button";
 
 import ContactForm from "../components/molecules/contact";
 import { Avatar } from "../components/atoms/avatar";
-import { Card } from "../components/cards/card";
-import { CardBowie } from "../components/cards/cardBowie";
+// import { Card } from "../components/cards/card";
+// import { CardBowie } from "../components/cards/cardBowie";
 
 import { Design, Frontend, Backend } from "../components/molecules/list";
 
@@ -29,7 +29,9 @@ import "aos/dist/aos.css";
 import SimpleSlider from "../components/third-party/carousel";
 
 //Icons
-import { Github, Youtube, Linkedin } from "@styled-icons/boxicons-logos";
+import { BiLogoGithub, BiLogoYoutube, BiLogoLinkedin } from "react-icons/bi";
+import { IconContext } from "react-icons";
+
 
 //Librairies pour le style
 import styled from "styled-components";
@@ -75,19 +77,6 @@ const Divider = styled.hr`
   }
 `;
 
-const LinkedinIcon = styled(Linkedin)`
-  width: 45px;
-  height: 45px;
-  color: white;
-  margin: 20px;
-`;
-
-const GithubIcon = styled(Github)`
-  width: 45px;
-  height: 45px;
-  color: white;
-  margin: 20px;
-`;
 
 const DivLayout = styled.div`
   display: flex;
@@ -252,16 +241,16 @@ const DivPortfolio2 = styled.div`
 const IndexPage = (props) => {
   const projects = props.data.allMongodbPortfolioProjects.edges;
 
-  const cardsToDisplay = projects.map((project) => (
-    <CardBowie
-      imageContent={project.node.img}
-      imageAlt={project.node.alt}
-      textContent={project.node.desc}
-      title={project.node.name}
-      socialInformation={project.node.socials}
-      imageLink={project.node.url}
-    ></CardBowie>
-  ));
+  // const cardsToDisplay = projects.map((project) => (
+  //   <CardBowie
+  //     imageContent={project.node.img}
+  //     imageAlt={project.node.alt}
+  //     textContent={project.node.desc}
+  //     title={project.node.name}
+  //     socialInformation={project.node.socials}
+  //     imageLink={project.node.url}
+  //   ></CardBowie>
+  // ));
 
   useEffect(() => {
     document.title = "Camille Web Developer";
@@ -304,6 +293,8 @@ const IndexPage = (props) => {
   };
 
   return (
+        <IconContext.Provider value={{  className: "landingPage__icon" }}>
+    
     <Container>
       <Layout
         id="layout1"
@@ -365,7 +356,7 @@ const IndexPage = (props) => {
           rel="noreferrer"
           target="_blank"
         >
-          <LinkedinIcon />
+          <BiLogoLinkedin/>
         </a>
         <a
           aria-label="git"
@@ -373,7 +364,7 @@ const IndexPage = (props) => {
           rel="noreferrer"
           target="_blank"
         >
-          <GithubIcon></GithubIcon>
+          <BiLogoGithub/>
         </a>
       </Layout>
 
@@ -589,6 +580,7 @@ const IndexPage = (props) => {
       </Layout>
       <Footer></Footer>
     </Container>
+    </IconContext.Provider>
   );
 };
 
