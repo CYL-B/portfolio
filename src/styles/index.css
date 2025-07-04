@@ -7,3 +7,25 @@
   background-color: transparent;
   border-radius: 50px;
 }
+
+.profileIcon {
+  display: inline-block;
+  margin: 0px 10px 10px 0px;
+  color: #2e4057;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.landingPage__icon {
+  width: 45px;
+  height: 45px;
+  color: white;
+  margin: 20px;
+}
+
+.menu_icon {
+ height:2rem;
+  padding:0px 10px 0px 10px
+}
