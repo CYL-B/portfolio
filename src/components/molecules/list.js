@@ -1,32 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import "@fontsource/zilla-slab";
-import {
-  Figma,
-  VisualStudio,
-  Nodejs,
-  Adobe,
-  ReactLogo,
-  Javascript,
-  Css3,
-  Html5,
-  Redux,
-  Bootstrap,
-  Sass,
-  Git,
-  TailwindCss
-} from "@styled-icons/boxicons-logos"; //mongoDB + heroku +npm
-import { Plus } from "@styled-icons/boxicons-regular";
-import {
-  Mongodb,
-  Expo,
-  Heroku,
-  Miro,
-  Styledcomponents,
-  Gatsby, 
-  Postman,
-  Npm
-} from "@styled-icons/simple-icons";
+import { SiCss3, SiJavascript, SiHtml5, SiTailwindcss, SiGit, SiVscodium, SiNodedotjs, SiAdobephotoshop, SiReact, SiRedux, SiBootstrap, SiSass, SiMongodb, SiExpo, SiHeroku, SiMiro,  SiGatsby, SiPostman, SiNpm, SiFigma} from "react-icons/si";
+import { IconContext } from "react-icons";
+
 import { StyledIconBase } from "@styled-icons/styled-icon";
 import { TextWrapper } from "../atoms/text";
 
@@ -43,52 +20,40 @@ const List = styled.li`
   align-items: center;
   justify-content: start;
 `;
-
-const IconStyleWrapper = styled.div`
-  ${StyledIconBase} {
-    display: inline-block;
-    margin: 0px 10px 10px 0px;
-    color: #2e4057;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50px;
-  }
-`;
+;
 
 var tableau = [
   [
-    { type: <Npm></Npm>, name: "Npm" },
-    { type: <Figma></Figma>, name: "Figma" },
-    { type: <Miro></Miro>, name: "Miro" },
-    { type: <VisualStudio></VisualStudio>, name: "Visualstudio" },
-    { type: <Git></Git>, name: "Git & Github" },
-    { type: <Postman></Postman>, name: "Postman" },
-    { type: <Plus></Plus>, name: "Scrum" },
+    { type: <SiNpm ></SiNpm>, name: "SiNpm" },
+    { type: <SiFigma></SiFigma>, name: "Figma" },
+    { type: <SiMiro></SiMiro>, name: "Miro" },
+    { type: <SiVscodium></SiVscodium>, name: "Visualstudio" },
+    { type: <SiGit></SiGit>, name: "Git & Github" },
+    { type: <SiPostman></SiPostman>, name: "Postman" },
+   
   ],
   [
-    { type: <Nodejs></Nodejs>, name: "Express/Nodejs" },
-    { type: <Mongodb></Mongodb>, name: "Mongodb" },
-    { type: <Heroku></Heroku>, name: "Heroku" },
-    { type: <Expo></Expo>, name: "Expo" },
+    { type: <SiNodedotjs className="icon"></SiNodedotjs>, name: "Express/Nodejs" },
+    { type: <SiMongodb></SiMongodb>, name: "Mongodb" },
+    { type: <SiHeroku></SiHeroku>, name: "Heroku" },
+    { type: <SiExpo></SiExpo>, name: "Expo" },
   ],
   [
-    { type: <Javascript></Javascript>, name: "Javascript" },
-    { type: <Css3></Css3>, name: "CSS" },
-    { type: <Sass></Sass>, name: "SASS" },
-    { type: <Html5></Html5>, name: "HTML" },
-    { type: <TailwindCss></TailwindCss>, name: "Tailwind" },
-    { type: <ReactLogo></ReactLogo>, name: "React/ReactNative" },
-    { type: <Redux></Redux>, name: "Redux" },
-    { type: <Styledcomponents></Styledcomponents>, name: "Styled-components" },
-    { type: <Gatsby></Gatsby>, name: "Gatsby" },
+    { type: <SiJavascript></SiJavascript>, name: "Javascript" },
+    { type: <SiCss3></SiCss3>, name: "CSS" },
+    { type: <SiSass></SiSass>, name: "SASS" },
+    { type: <SiHtml5></SiHtml5>, name: "HTML" },
+    { type: <SiTailwindcss></SiTailwindcss>, name: "Tailwind" },
+    { type: <SiReact></SiReact>, name: "React/ReactNative" },
+    { type: <SiRedux></SiRedux>, name: "Redux" },
+    { type: <SiGatsby></SiGatsby>, name: "Gatsby" },
   ],
 ];
 
 var design = tableau[0].map((element, i) => {
   return (
     <List key={i}>
-      <IconStyleWrapper>{element.type}</IconStyleWrapper>
+      {element.type}
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );
@@ -97,7 +62,7 @@ var design = tableau[0].map((element, i) => {
 var backend = tableau[1].map((element, i) => {
   return (
     <List key={i}>
-      <IconStyleWrapper>{element.type}</IconStyleWrapper>
+      {element.type}
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );
@@ -106,7 +71,7 @@ var backend = tableau[1].map((element, i) => {
 var frontend = tableau[2].map((element, i) => {
   return (
     <List key={i}>
-      <IconStyleWrapper>{element.type}</IconStyleWrapper>
+      {element.type}
       <TextWrapper font="zilla" title={element.name}></TextWrapper>
     </List>
   );
@@ -114,6 +79,7 @@ var frontend = tableau[2].map((element, i) => {
 
 export const Design = (props) => {
   return (
+    <IconContext.Provider value={{  className: "technoIcon" }}>
     <UnorderedList
       data-aos={props.data}
       data-aos-delay={props.delay}
@@ -122,11 +88,13 @@ export const Design = (props) => {
     >
       {design}
     </UnorderedList>
+    </IconContext.Provider>
   );
 };
 
 export const Backend = (props) => {
   return (
+    <IconContext.Provider value={{  className: "technoIcon" }}>
     <UnorderedList
       data-aos={props.data}
       data-aos-delay={props.delay}
@@ -135,11 +103,13 @@ export const Backend = (props) => {
     >
       {backend}
     </UnorderedList>
+    </IconContext.Provider>
   );
 };
 
 export const Frontend = (props) => {
   return (
+    <IconContext.Provider value={{  className: "technoIcon" }}>
     <UnorderedList
       data-aos={props.data}
       data-aos-delay={props.delay}
@@ -148,5 +118,6 @@ export const Frontend = (props) => {
     >
       {frontend}
     </UnorderedList>
+    </IconContext.Provider>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { graphql } from "gatsby";
+import "../styles/index.css";
+
 
 //custom components
 import Layout from "../components/utils/layout";
