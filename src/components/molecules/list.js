@@ -4,7 +4,6 @@ import "@fontsource/zilla-slab";
 import { SiCss3, SiJavascript, SiHtml5, SiTailwindcss, SiGit, SiVscodium, SiNodedotjs, SiAdobephotoshop, SiReact, SiRedux, SiBootstrap, SiSass, SiMongodb, SiExpo, SiHeroku, SiMiro,  SiGatsby, SiPostman, SiNpm, SiFigma} from "react-icons/si";
 import { IconContext } from "react-icons";
 
-import { StyledIconBase } from "@styled-icons/styled-icon";
 import { TextWrapper } from "../atoms/text";
 
 const UnorderedList = styled.ul`
